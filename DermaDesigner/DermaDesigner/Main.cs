@@ -8,48 +8,48 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace DermaDesigner {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class Main : Form {
+        public Main() {
             InitializeComponent();
         }
 
 		private void x480ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(640, 480);
+			Main.ActiveForm.Size = new Size(640, 480);
 			Derma.Repaint();
 		}
 
 		private void x600ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(800, 600);
+			Main.ActiveForm.Size = new Size(800, 600);
 			Derma.Repaint();
 		}
 
 		private void x768ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(1024, 768);
+			Main.ActiveForm.Size = new Size(1024, 768);
 			Derma.Repaint();
 		}
 
 		private void x960ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(1280, 960);
+			Main.ActiveForm.Size = new Size(1280, 960);
 			Derma.Repaint();
 		}
 
 		private void x1064ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(1280, 1024);
+			Main.ActiveForm.Size = new Size(1280, 1024);
 			Derma.Repaint();
 		}
 
 		private void xToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(1280, 768);
+			Main.ActiveForm.Size = new Size(1280, 768);
 			Derma.Repaint();
 		}
 
 		private void x900ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(1440, 900);
+			Main.ActiveForm.Size = new Size(1440, 900);
 			Derma.Repaint();
 		}
 
 		private void x1050ToolStripMenuItem_Click(object sender, EventArgs e) {
-			Form1.ActiveForm.Size = new Size(1680, 1050);
+			Main.ActiveForm.Size = new Size(1680, 1050);
 			Derma.Repaint();
 		}
 
