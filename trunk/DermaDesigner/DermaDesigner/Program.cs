@@ -35,7 +35,7 @@ namespace DermaDesigner {
             Application.SetCompatibleTextRenderingDefault(false);
 
 			// Set this before making any derma controls
-			Derma.Init(new Form1(), new PropertiesWindow(), new Toolbox());
+			Derma.Init(new Main(), new PropertiesWindow(), new Toolbox());
 			Derma.GetWorkspace().Show();
 
 			Derma.toolbox.Location = new System.Drawing.Point(Derma.GetWorkspace().Location.X - Derma.toolbox.ClientSize.Width - 20, Derma.GetWorkspace().Location.Y);
