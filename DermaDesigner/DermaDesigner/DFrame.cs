@@ -69,8 +69,8 @@ namespace DermaDesigner {
 		public DFrame(int xpos, int ypos) : base(xpos, ypos, 120, 60) {
 			numOfThisType++;
 
-			if (!this.SetVarName("DFrame" + numOfThisType.ToString()))
-				while (!this.SetVarName("DFrame" + numOfThisType.ToString() + Derma.RandomString(4, false)))
+			if (!this.SetVarName(type + numOfThisType.ToString()))
+				while (!this.SetVarName(type + numOfThisType.ToString() + Derma.RandomString(4, false)))
 					continue;
 		}
 

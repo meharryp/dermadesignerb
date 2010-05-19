@@ -47,7 +47,7 @@
 			this.MaximizeBox = false;
 			this.Name = "PropertiesWindow";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "DermaDesigner - Properties";
+			this.Text = "Properties";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PropertiesWindow_FormClosing);
 			this.Move += new System.EventHandler(this.PropertiesWindow_Move);
 			this.ResumeLayout(false);

@@ -54,7 +54,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Toolbox";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "DermaDesigner - Toolbox";
+			this.Text = "Toolbox";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HideToolbox);
 			this.Move += new System.EventHandler(this.Toolbox_Move);
 			this.ResumeLayout(false);

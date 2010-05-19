@@ -149,6 +149,25 @@ namespace DermaDesigner {
 			l.luaOutput.Text = Derma.GenerateLua();
 
 			l.ShowDialog(this);
+		}
+
+		private void x720ToolStripMenuItem_Click(object sender, EventArgs e) {
+			Main.ActiveForm.Size = new Size(1280, 720);
+			Derma.Repaint();
+		}
+
+		private void x1080ToolStripMenuItem_Click(object sender, EventArgs e) {
+			Main.ActiveForm.Size = new Size(1920, 1080);
+			Derma.Repaint();
+		}
+
+		private void findPanelByVariableToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (Derma.findpanelwindow == null) {
+				Derma.findpanelwindow = new FindPanelByVar();
+				Derma.findpanelwindow.Show();
+			} else {
+				Derma.findpanelwindow.Show();
+			}
 		}		
     }
 }

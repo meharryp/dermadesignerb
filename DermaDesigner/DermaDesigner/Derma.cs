@@ -22,6 +22,7 @@ namespace DermaDesigner {
 		private static SolidBrush pinkhighlighter = new SolidBrush(Color.HotPink);
 		private static float nextz = 0;
 		private static Dictionary<string, Type> typeDict = new Dictionary<string, Type>();
+		public static FindPanelByVar findpanelwindow;
 
 		// For the big logo
 		static Image logo_256 = Derma.LoadImage("resources/logo_256.png");
@@ -347,13 +348,15 @@ namespace DermaDesigner {
 					p.dragging = false;
 					Panel h = GetHighlightedPanel();
 
-					if (h) {
+					if (h && p.canBeChild && h.canBeParent) {
 						p.SetParent(h);
+						p.z = nextz;
+						nextz++;
+						ResortPanelsByZ();
 						RefreshProperties();
+						h.highlighted = false;
 					}
 				}
-
-				p.highlighted = false;
             }
         }
 
