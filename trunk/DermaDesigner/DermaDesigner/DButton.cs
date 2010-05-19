@@ -27,8 +27,7 @@ namespace DermaDesigner {
 		public static new Image thumbnail = Derma.LoadImage(respath + "dbutton_32.png");
 
 		public static int numOfThisType = 0;
-		public new string type = "DButton";
-		public new bool canBeChild = true;
+		public override string type { get { return "DButton"; } }
 		private SizeF labelSize = Derma.GetTextSize("DButton");
 
 		// Lua variables
@@ -56,8 +55,8 @@ namespace DermaDesigner {
 		public DButton(int xpos, int ypos) : base(xpos, ypos, 70, 25) {
 			numOfThisType++;
 
-			if (!this.SetVarName("DButton" + numOfThisType.ToString()))
-				while (!this.SetVarName("DButton" + numOfThisType.ToString() + Derma.RandomString(4, false)))
+			if (!this.SetVarName(type + numOfThisType.ToString()))
+				while (!this.SetVarName(type + numOfThisType.ToString() + Derma.RandomString(4, false)))
 					continue;
 		}
 
@@ -119,7 +118,7 @@ namespace DermaDesigner {
 			code.AppendFormat("local {0} = vgui.Create('DButton')\n", this.varname);
 
 			if (this.parent != null)
-				code.AppendFormat("{0}:SetParent({1})", this.varname, parent.varname);
+				code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
 			code.AppendFormat("{0}:SetSize({1}, {2})\n", this.varname, this.width, this.height);
 
@@ -128,7 +127,7 @@ namespace DermaDesigner {
 			else
 				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParent().X, this.GetPosRelativeToParent().Y);
 
-			code.AppendFormat("{0}:SizeText('{1}')\n", this.varname, this.text);
+			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
 
 			if (!this.visible)
 				code.AppendFormat("{0}:SetVisible(false)\n", this.varname);

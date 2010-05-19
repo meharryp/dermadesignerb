@@ -64,3 +64,4 @@ Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.TrustInfo.xml
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe.manifest
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.application
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.FindPanelByVar.resources
