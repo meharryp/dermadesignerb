@@ -12,13 +12,15 @@ namespace DermaDesigner {
 		// painting resources
 		public static new Image thumbnail = Derma.LoadImage(respath + "dtextentry_32.png");
 		private static Color whitecolor = Color.FromArgb(255, 241, 241, 241);
-		private static SolidBrush outlineBrush = new SolidBrush(Color.Black);
+		private static SolidBrush blackBrush = new SolidBrush(Color.Black);
 		private static SolidBrush insideBrush = new SolidBrush(whitecolor);
-		private static Pen outlinePen = new Pen(outlineBrush);
+		private static Pen outlinePen = new Pen(blackBrush);
 
 		// class vars
 		public static int numOfThisType = 0;
 		public override string type { get { return "DTextEntry"; } }
+
+		private SizeF textSize = Derma.GetTextSize("");
 
 		// Lua variables
 		public string text = "";
@@ -30,6 +32,7 @@ namespace DermaDesigner {
 			get { return text; }
 			set {
 				this.text = value;
+				this.textSize = Derma.GetTextSize(this.text);
 				Derma.Repaint();
 			}
 		}
@@ -61,6 +64,18 @@ namespace DermaDesigner {
 
 			p.Graphics.FillRectangle(insideBrush, this.x, this.y, this.width, this.height);
 			p.Graphics.DrawRectangle(outlinePen, this.x, this.y, this.width - 1, this.height - 1);
+
+			if (parent) {
+				int a, b, c, d;
+				Point relpos = this.GetPosRelativeToParent();
+				a = (this.x >= parent.x) ? this.x : parent.x;
+				b = (this.y >= parent.y) ? this.y : parent.y;
+				c = (this.x + this.width > parent.x + parent.width) ? parent.width - relpos.X : this.width;
+				d = (this.y + this.height > parent.y + parent.height) ? parent.height - relpos.Y : this.height;
+				p.Graphics.Clip = new Region(new Rectangle(a, b, c, d));
+			}
+
+			p.Graphics.DrawString(this.text, Derma.DefaultFont, blackBrush, this.x + 3, (this.y + (this.height / 2)) - (this.textSize.Height / 2));
 		}
 
 		public override string GenerateLua() {
