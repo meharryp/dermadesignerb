@@ -66,7 +66,11 @@ namespace DermaDesigner {
 		}
 
 		public override void ControlPaint(object sender, PaintEventArgs p) {
-			p.Graphics.Clip = new Region(new Rectangle(this.x, this.y, this.width, this.height));
+			// if we have a parent, we don't want to draw outside them
+			if (this.parent)
+				p.Graphics.Clip = new Region(new Rectangle(parent.x, parent.y, parent.width, parent.height));
+			else
+				p.Graphics.Clip = new Region(new Rectangle(this.x, this.y, this.width, this.height));
 
 			p.Graphics.FillRectangle(bgBrush, this.x, this.y, this.width, this.height);
 
@@ -92,6 +96,19 @@ namespace DermaDesigner {
 
 			float xpos = (this.width / 2) - (labelSize.Width / 2);
 			float ypos = (this.height / 2) - (labelSize.Height / 2);
+
+			// We only want to draw the text inside the bounds of ourselves
+			// but this is only needful when we have set it to something else because we have a parent
+
+			if (parent) {
+				int a, b, c, d;
+				Point relpos = this.GetPosRelativeToParent();
+				a = (this.x >= parent.x) ? this.x : parent.x;
+				b = (this.y >= parent.y) ? this.y : parent.y;
+				c = (this.x + this.width > parent.x + parent.width) ? parent.width - relpos.X : this.width;
+				d = (this.y + this.height > parent.y + parent.height) ? parent.height - relpos.Y : this.height;
+				p.Graphics.Clip = new Region(new Rectangle(a, b, c, d));
+			}
 
 			// draw label
 			p.Graphics.DrawString(this.text, Derma.DefaultFont, Derma.fontBrush, this.x + xpos, this.y + ypos);

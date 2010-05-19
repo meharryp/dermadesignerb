@@ -24,15 +24,15 @@ namespace DermaDesigner {
 		public static new Image thumbnail = Derma.LoadImage(respath + "dframe_32.png");
 
 		public static int numOfThisType = 0;
-		public new string type = "DFrame";
-		public new bool canBeChild = false;
+		public override string type { get { return "DFrame"; } }
+		public override bool canBeChild { get { return false; } }
 
 		// Lua variables
-		string title = "Untitled DFrame";
-		bool sizable = true;
-		bool deleteOnClose = false;
-		bool closeButton = true;
-		bool makePopup = true;
+		public string title = "Untitled DFrame";
+		public bool sizable = true;
+		public bool deleteOnClose = false;
+		public bool closeButton = true;
+		public bool makePopup = true;
 
 		#region Properties
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the window title")]

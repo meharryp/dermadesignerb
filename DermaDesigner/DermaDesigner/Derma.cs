@@ -18,7 +18,8 @@ namespace DermaDesigner {
         private static List<Panel> panels = new List<Panel>();// A list of all the panels
 		private static List<EventHandler> TickEvents = new List<EventHandler>(); // The container for custom Tick events
 		private static Timer Tick = new Timer();				// Tick timer
-		private static SolidBrush highlighter = new SolidBrush(Color.LimeGreen);
+		private static SolidBrush greenhighlighter = new SolidBrush(Color.LimeGreen);
+		private static SolidBrush pinkhighlighter = new SolidBrush(Color.HotPink);
 		private static float nextz = 0;
 		private static Dictionary<string, Type> typeDict = new Dictionary<string, Type>();
 
@@ -216,6 +217,16 @@ namespace DermaDesigner {
 		}
 		#endregion GetPanelsMouseIsOver
 
+		#region GetHighlightedPanel
+		public static Panel GetHighlightedPanel() {
+			foreach (Panel p in panels)
+				if (p.highlighted)
+					return p;
+
+			return null;
+		}
+		#endregion GetHighlightedPanel
+
 		#region Repaint
 		public static void Repaint() {
 			// which one is better?
@@ -245,7 +256,13 @@ namespace DermaDesigner {
 					if (Selected == p) {
 						Rectangle region = new Rectangle(p.x - 1, p.y - 1, p.width + 2, p.height + 2);
 						e.Graphics.Clip = new Region(region);
-						e.Graphics.FillRectangle(highlighter, region);
+						e.Graphics.FillRectangle(greenhighlighter, region);
+					}
+
+					if (p.highlighted) {
+						Rectangle region = new Rectangle(p.x - 1, p.y - 1, p.width + 2, p.height + 2);
+						e.Graphics.Clip = new Region(region);
+						e.Graphics.FillRectangle(pinkhighlighter, region);
 					}
 					p.ControlPaint(sender, e);
 				}
@@ -318,22 +335,38 @@ namespace DermaDesigner {
             }
         }
 
-        private static void MouseUp(object sender, MouseEventArgs e) {
-			foreach (Panel p in panels) p.dragging = false;
+        private static void MouseUp(object sender, MouseEventArgs e) { 
+			bool doneAlready = false;
             foreach (Panel p in panels) {
-				if (Derma.MouseIsOverPanel(p) && p.MouseUpHandler != null) {
+				if (Derma.MouseIsOverPanel(p) && !doneAlready && p.MouseUpHandler != null) {
                     p.MouseUpHandler(p, e);
-                    break;
+					doneAlready = true;
                 }
+
+				if (p.dragging) {
+					p.dragging = false;
+					Panel h = GetHighlightedPanel();
+
+					if (h) {
+						p.SetParent(h);
+						RefreshProperties();
+					}
+				}
+
+				p.highlighted = false;
             }
         }
 
         private static void MouseMove(object sender, MouseEventArgs e) {
+			bool alreadyCalled = false;
 			foreach (Panel p in panels) {
-				if (Derma.MouseIsOverPanel(p) && p.MouseMoveHandler != null) {
-                    p.MouseMoveHandler(p, e);
-                    break;
-                }
+				if (Derma.MouseIsOverPanel(p)) {
+					if (!alreadyCalled && p.MouseMoveHandler != null) {
+						p.MouseMoveHandler(p, e);
+						alreadyCalled = true;
+					}
+                } else
+					p.highlighted = false;
             }
         }
 
@@ -363,15 +396,27 @@ namespace DermaDesigner {
 			foreach (Panel p in panels) {
 				if (p.centered)
 					p.Center();
+
 				if (!ResizeGrip.IsResizing() && p.dragging && !p.centered) {
 					// if predrag returns true, move the panel
 					if (p.PreDrag(e.X - p.dragOffsetX, e.Y - p.dragOffsetY)) {
 						p.SetPos(e.X - p.dragOffsetX, e.Y - p.dragOffsetY);
 						p.PostDrag();
 						RefreshProperties();
-						Repaint();
+
+						if (!p.hasParent) {
+							List<Panel> panelsOver = GetPanelsMouseIsOver();
+							foreach (Panel pan in panelsOver) {
+								if (pan != p && pan.canBeParent == true && p.canBeChild == true) {
+									pan.highlighted = true;
+									break;
+								}
+							}
+						}
 					}
 				}
+
+				Repaint();
 			}
 		}
 		#endregion MouseHandlers
