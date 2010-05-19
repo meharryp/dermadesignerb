@@ -49,14 +49,14 @@ namespace DermaDesigner {
 		#region Properties
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("X Position")]
 		public int X {
-			get { return x; }
-			set { x = value; Derma.Repaint(); }
+			get { return GetPosRelativeToParent().X; }
+			set { SetPosRelativeToParent(value, true); Derma.Repaint(); }
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Y Position")]
 		public int Y {
-			get { return y; }
-			set { y = value; }
+			get { return GetPosRelativeToParent().Y; }
+			set { SetPosRelativeToParent(value, false); Derma.Repaint(); }
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the height of this control")]
@@ -178,6 +178,30 @@ namespace DermaDesigner {
 				return new Point(this.x - this.GetParent().GetPosRelativeToParent().X, this.y - this.GetParent().GetPosRelativeToParent().Y);
 			else
 				return new Point(this.x, this.y);
+		}
+
+		public void SetPosRelativeToParent(int newx, int newy) {
+			if (this.hasParent && this.parent) {
+				this.x = parent.x + newx;
+				this.y = parent.y + newy;
+			} else {
+				this.x = newx;
+				this.y = newy;
+			}
+		}
+
+		public void SetPosRelativeToParent(int newv, bool x) {
+			if (this.hasParent && this.parent) {
+				if (x)
+					this.x = parent.x + newv;
+				else
+					this.y = parent.y + newv;
+			} else {
+				if (x)
+					this.x = newv;
+				else
+					this.y = newv;
+			}
 		}
 
 		public void ModifyPos(int addx, int addy) {
