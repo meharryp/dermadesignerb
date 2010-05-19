@@ -243,6 +243,7 @@ namespace DermaDesigner {
                     p.hasChildren = false;
 
                 this.hasParent = false;
+				this.parent = null;
             }
         }
 
