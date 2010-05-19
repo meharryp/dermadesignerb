@@ -16,6 +16,7 @@ namespace DermaDesigner {
 		public int dragOffsetX;
 		public int dragOffsetY;
 		public float z;
+		public bool highlighted;
 		// this is for the designer to know whether to treat this control like it exists or not
 		public bool hidden;
 		public List<Panel> children;
@@ -27,8 +28,10 @@ namespace DermaDesigner {
 		public MouseEventHandler MouseWheelHandler;
 
 		public Panel parent;
-		public bool canBeParent;
-		public bool canBeChild;
+		[BrowsableAttribute(false)]
+		public virtual bool canBeParent { get { return true; } }
+		[BrowsableAttribute(false)]
+		public virtual bool canBeChild { get { return true; } }
 		public bool hasParent;
 		public bool hasChildren;
 		public bool dragging;
@@ -36,7 +39,8 @@ namespace DermaDesigner {
 		public bool centered;
 		// this is to let is know whether to do SetVisible(false) on this control for lua
 		public bool visible;
-		public string type;
+		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The controls type")]
+		public virtual string type { get { return "Panel"; } }
 		public string varname;
 
 		public Image thumbnail;
@@ -105,6 +109,16 @@ namespace DermaDesigner {
 			get { return varname; }
 			set { this.SetVarName(value); }
 		}
+
+		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The variable name of the parent panel")]
+		public string Parent {
+			get { 
+				if (!parent)
+					return "[Not set]";
+				else
+					return parent.varname;
+			}
+		}
 		#endregion Properties
 
 		public Panel(int xpos, int ypos, int w, int h) {
@@ -115,15 +129,12 @@ namespace DermaDesigner {
 
 			this.children = new List<Panel>();
 
-			this.canBeChild = true;
-			this.canBeParent = true;
 			this.hasParent = false;
 			this.hasChildren = false;
 			this.dragging = false;
 			this.locked = false;
 			this.hidden = false;
 			this.centered = false;
-			this.type = "Panel";
 			this.visible = true;
 			this.varname = "";
 		}
