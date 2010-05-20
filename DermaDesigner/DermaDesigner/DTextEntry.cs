@@ -67,7 +67,7 @@ namespace DermaDesigner {
 
 			if (parent) {
 				int a, b, c, d;
-				Point relpos = this.GetPosRelativeToParent();
+				Point relpos = this.GetPosRelativeToParentNonRecursive();
 				a = (this.x >= parent.x) ? this.x : parent.x;
 				b = (this.y >= parent.y) ? this.y : parent.y;
 				c = (this.x + this.width > parent.x + parent.width) ? parent.width - relpos.X : this.width;
@@ -90,7 +90,7 @@ namespace DermaDesigner {
 			if (this.ShouldCenter())
 				code.AppendFormat("{0}:Center()\n", this.varname);
 			else
-				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParent().X, this.GetPosRelativeToParent().Y);
+				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParentNonRecursive().X, this.GetPosRelativeToParentNonRecursive().Y);
 
 			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
 

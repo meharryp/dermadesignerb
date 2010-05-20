@@ -68,7 +68,7 @@ namespace DermaDesigner {
 			// if we have a parent, we don't want to draw outside them
 			if (this.parent) {
 				int a, b, c, d;
-				Point relpos = this.GetPosRelativeToParent();
+				Point relpos = this.GetPosRelativeToParentNonRecursive();
 				a = (this.x >= parent.x) ? this.x : parent.x;
 				b = (this.y >= parent.y) ? this.y : parent.y;
 				c = (this.x + this.width > parent.x + parent.width) ? parent.width - relpos.X : this.width;
@@ -94,7 +94,7 @@ namespace DermaDesigner {
 			if (this.parent != null)
 				code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
-			code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParent().X, this.GetPosRelativeToParent().Y);
+			code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParentNonRecursive().X, this.GetPosRelativeToParentNonRecursive().Y);
 			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
 
 			if (this.sizetocontents)
@@ -106,7 +106,7 @@ namespace DermaDesigner {
 				code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
 
 			if (this.color != Color.LightGray)
-				code.AppendFormat("{0}:SetTextColor(Color({1}, {2}, {3}, {4})", new object[] {this.varname, this.color.R, this.color.G, this.color.B, this.color.A});
+				code.AppendFormat("{0}:SetTextColor(Color({1}, {2}, {3}, {4}))", new object[] {this.varname, this.color.R, this.color.G, this.color.B, this.color.A});
 
 			return code.ToString();
 		}

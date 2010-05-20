@@ -23,6 +23,7 @@ namespace DermaDesigner {
 		private static float nextz = 0;
 		private static Dictionary<string, Type> typeDict = new Dictionary<string, Type>();
 		public static FindPanelByVar findpanelwindow;
+		private static List<Panel> alreadyGenerated = new List<Panel>();
 
 		// For the big logo
 		static Image logo_256 = Derma.LoadImage("resources/logo_256.png");
@@ -141,11 +142,32 @@ namespace DermaDesigner {
 		#endregion RegisterPanel
 
 		#region GenerateLua
+		public static string GenerateLuaSinglePanel(Panel p) {
+			StringBuilder s = new StringBuilder();
+
+			if (!alreadyGenerated.Contains(p)) {
+				s.Append(p.GenerateLua());
+				alreadyGenerated.Add(p);
+			}
+
+			foreach (Panel pan in p.children)
+				if (!alreadyGenerated.Contains(pan))
+					s.Append(GenerateLuaSinglePanel(pan));
+
+			return s.ToString();
+		}
+
 		public static string GenerateLua() {
 			StringBuilder s = new StringBuilder();
 
 			foreach (Panel p in panels)
-				s.Append(p.GenerateLua());
+				if (!p.hasParent && !p.parent)
+					s.Append(GenerateLuaSinglePanel(p));
+
+			foreach (Panel p in panels)
+				s.Append(GenerateLuaSinglePanel(p));
+
+			alreadyGenerated.Clear();
 
 			return s.ToString();
 		}
