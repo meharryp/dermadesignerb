@@ -5,6 +5,8 @@ using System.Text;
 using System.Drawing;
 using System.ComponentModel;
 
+// Thanks to SnakeFace for this control
+
 namespace DermaDesigner {
 	class DLabel : Panel {
 		private static string respath = "resources/DLabel/";
@@ -32,6 +34,7 @@ namespace DermaDesigner {
 				this.labelSize = Derma.GetTextSize(this.text);
 				if (this.sizetocontents)
 					this.SetSize((int)this.labelSize.Width, (int)this.labelSize.Height);
+				Derma.RefreshProperties();
 				Derma.Repaint();
 			}
 		}
