@@ -24,7 +24,7 @@ namespace DermaDesigner {
 
 		// Lua variables
 		public string text = "";
-		public string onEnterFunc = "";
+		public string onEnterFunc = "function() end";
 
 		#region Properties
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the text initially displayed in the DTextEntry")]
@@ -98,7 +98,7 @@ namespace DermaDesigner {
 				code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
 
 			if (this.onEnterFunc.Trim() != "")
-				code.AppendFormat("{0}.DoClick = function()\n{1}\nend\n", this.varname, this.onEnterFunc);
+				code.AppendFormat("{0}.DoClick = {1}\n", this.varname, this.onEnterFunc);
 
 			return code.ToString();
 		}

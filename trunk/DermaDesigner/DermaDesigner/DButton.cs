@@ -32,7 +32,7 @@ namespace DermaDesigner {
 
 		// Lua variables
 		string text = "DButton";
-		string DoClickFunc = "";
+		string DoClickFunc = "function() end";
 
 		#region Properties
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the text displayed on the DButton")]
@@ -133,7 +133,7 @@ namespace DermaDesigner {
 				code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
 
 			if (this.DoClickFunc.Trim() != "")
-				code.AppendFormat("{0}.DoClick = function()\n{1}\nend\n", this.varname, this.DoClickFunc);
+				code.AppendFormat("{0}.DoClick = {1}\n", this.varname, this.DoClickFunc);
 
 			return code.ToString();
 		}

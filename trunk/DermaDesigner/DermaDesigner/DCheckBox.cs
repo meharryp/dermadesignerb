@@ -27,7 +27,7 @@ namespace DermaDesigner {
         // Lua variables
         string text = "CheckBox Label";
         string ConFunc = "";
-		string ClickFunc = "";
+		string ClickFunc = "function() end";
         bool ticked = false;
 
         #region Properties
@@ -43,7 +43,7 @@ namespace DermaDesigner {
             }
         }
 
-        [CategoryAttribute("Lua Attributes"), DescriptionAttribute("Set the initial state of the checkbox (0 = unchecked)")]
+        [CategoryAttribute("Lua Attributes"), DescriptionAttribute("Set the initial state of the checkbox")]
         public bool Checked {
             get { return ticked; }
             set {
@@ -58,7 +58,7 @@ namespace DermaDesigner {
             set { ConFunc = value; }
         }
 
-		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The function to be run when the checkbox is clicked")]
+		[Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(System.Drawing.Design.UITypeEditor)), CategoryAttribute("Lua Attributes"), DescriptionAttribute("The function to be run when the checkbox is clicked")]
 		public string OnClick {
 			get { return ClickFunc; }
 			set { ClickFunc = value; }
@@ -127,7 +127,7 @@ namespace DermaDesigner {
                 code.AppendFormat("{0}:SetConVar({1})\n", this.varname, this.ConFunc);
 
 			if (this.ClickFunc.Trim() != "")
-				code.AppendFormat("{0}.DoClick() = function()\n{1}\nend", this.varname, this.ClickFunc);
+				code.AppendFormat("{0}.DoClick() = {1}\n", this.varname, this.ClickFunc);
 
             if (!this.visible)
                 code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
