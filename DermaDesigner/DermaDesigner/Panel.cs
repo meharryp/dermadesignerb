@@ -42,6 +42,10 @@ namespace DermaDesigner {
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The controls type")]
 		public virtual string type { get { return "Panel"; } }
 		public string varname;
+		// This makes it able to size or not in the editor, for instance in DLabel we don't need to resize
+		// this doesn't correlate to lua's SetSizable
+		[BrowsableAttribute(false)]
+		public virtual bool sizable { get { return true; } }
 
 		public Image thumbnail;
 
