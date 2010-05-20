@@ -24,7 +24,7 @@ namespace DermaDesigner {
 		public bool sizetocontents = true;
 
 		#region Properties
-		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The text to display in the DLabel")]
+		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The text to display in the DLabel"), Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(System.Drawing.Design.UITypeEditor))]
 		public string Text {
 			get { return text; }
 			set {

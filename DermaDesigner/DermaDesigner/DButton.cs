@@ -99,9 +99,9 @@ namespace DermaDesigner {
 			// We only want to draw the text inside the bounds of ourselves
 			// but this is only needful when we have set it to something else because we have a parent
 
-			if (parent) {
+			if (hasParent && parent) {
 				int a, b, c, d;
-				Point relpos = this.GetPosRelativeToParent();
+				Point relpos = this.GetPosRelativeToParentNonRecursive();
 				a = (this.x >= parent.x) ? this.x : parent.x;
 				b = (this.y >= parent.y) ? this.y : parent.y;
 				c = (this.x + this.width > parent.x + parent.width) ? parent.width - relpos.X : this.width;
