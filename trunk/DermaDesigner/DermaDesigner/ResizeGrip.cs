@@ -16,7 +16,7 @@ namespace DermaDesigner {
 		public static bool IsResizing() { return resizing; }
 
 		public static void Paint(object sender, PaintEventArgs e) {
-			if (host != null && Derma.GetSelected() == host) {
+			if (host != null && Derma.GetSelected() == host && host.sizable) {
 				// set the clip so we can actually see ourself...
 				e.Graphics.Clip = new Region(new Rectangle(host.x + host.width - twoThirdsSize, host.y + host.height - twoThirdsSize, 16, 16));
 				
@@ -26,7 +26,7 @@ namespace DermaDesigner {
 		}
 
 		public static bool Resize_MouseDown(object sender, MouseEventArgs e) {
-			if (host != null && Derma.GetSelected() == host && !host.locked && Derma.IsMouseOverArea(host.x + host.width - twoThirdsSize, host.y + host.height - twoThirdsSize, 16, 16)) {
+			if (host != null && Derma.GetSelected() == host && !host.locked && host.sizable && Derma.IsMouseOverArea(host.x + host.width - twoThirdsSize, host.y + host.height - twoThirdsSize, 16, 16)) {
 				resizing = true;
 				mouseOrigin.X = e.X;
 				mouseOrigin.Y = e.Y;

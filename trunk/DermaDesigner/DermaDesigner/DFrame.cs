@@ -29,7 +29,7 @@ namespace DermaDesigner {
 
 		// Lua variables
 		public string title = "Untitled DFrame";
-		public bool sizable = true;
+		public bool luaSizable = true;
 		public bool deleteOnClose = false;
 		public bool closeButton = true;
 		public bool makePopup = true;
@@ -43,8 +43,8 @@ namespace DermaDesigner {
 
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Toggles the resizability of the window")]
 		public bool Sizable {
-			get { return sizable; }
-			set { sizable = value; }
+			get { return luaSizable; }
+			set { luaSizable = value; }
 		}
 
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets if the window should be deleted on close")]
@@ -124,7 +124,7 @@ namespace DermaDesigner {
 
 			code.AppendFormat("{0}:SizeTitle('{1}')\n", this.varname, this.title);
 
-			if (!this.sizable)
+			if (!this.luaSizable)
 				code.AppendFormat("{0}:SetSizable(false)\n", this.varname);
 
 			if (!this.deleteOnClose)
