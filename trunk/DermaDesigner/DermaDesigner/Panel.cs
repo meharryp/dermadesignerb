@@ -231,8 +231,8 @@ namespace DermaDesigner {
 		}
 
 		public void Center() {
-			if (this.hasParent)
-				this.SetPos((parent.width / 2) - (this.width / 2), (parent.height / 2) - (this.height / 2));
+			if (this.hasParent && this.parent)
+				this.SetPos(parent.x + (parent.width / 2) - (this.width / 2), parent.y + (parent.height / 2) - (this.height / 2));
 			else
 				this.SetPos((Derma.GetWorkspace().Width / 2) - (this.width / 2), (Derma.GetWorkspace().Height / 2) - (this.height / 2));
 		}

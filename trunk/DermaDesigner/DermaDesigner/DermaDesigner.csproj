@@ -81,8 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DButton.cs" />
+    <Compile Include="DCheckBox.cs" />
     <Compile Include="Derma.cs" />
     <Compile Include="DFrame.cs" />
+    <Compile Include="DImage.cs" />
     <Compile Include="DLabel.cs" />
     <Compile Include="DTextEntry.cs" />
     <Compile Include="FindPanelByVar.cs">
