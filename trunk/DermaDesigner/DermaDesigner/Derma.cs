@@ -348,7 +348,7 @@ namespace DermaDesigner {
 					p.dragging = false;
 					Panel h = GetHighlightedPanel();
 
-					if (h && p.canBeChild && h.canBeParent) {
+					if (h) {
 						p.SetParent(h);
 						p.z = nextz;
 						nextz++;
@@ -407,10 +407,15 @@ namespace DermaDesigner {
 						p.PostDrag();
 						RefreshProperties();
 
-						if (!p.hasParent) {
-							List<Panel> panelsOver = GetPanelsMouseIsOver();
-							foreach (Panel pan in panelsOver) {
-								if (pan != p && pan.canBeParent == true && p.canBeChild == true) {
+						List<Panel> panelsOver = GetPanelsMouseIsOver();
+						foreach (Panel pan in panelsOver) {
+							if (pan != p && pan.canBeParent == true && p.parent != pan && p.canBeChild == true && (!p.parent || p.parent.z < pan.z)) {
+								if (p.hasParent && p.parent) {
+									if (p.parent.z < pan.z && pan.parent != p) {
+										pan.highlighted = true;
+										break;
+									}
+								} else {
 									pan.highlighted = true;
 									break;
 								}

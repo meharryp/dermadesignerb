@@ -169,8 +169,9 @@ namespace DermaDesigner {
 
 		public void SetPos(int x, int y) {
 			foreach (Panel p in children) {
-				p.x += x - this.x;
-				p.y += y - this.y;
+				/*p.x += x - this.x;
+				p.y += y - this.y;*/
+				p.ModifyPos(x - this.x, y - this.y);
 			}
 			this.x = x;
 			this.y = y;
@@ -178,8 +179,15 @@ namespace DermaDesigner {
 		}
 
 		public Point GetPosRelativeToParent() {
-			if (this.hasParent && this.GetParent() != null)
-				return new Point(this.x - this.GetParent().GetPosRelativeToParent().X, this.y - this.GetParent().GetPosRelativeToParent().Y);
+			if (this.hasParent && this.parent)
+				return new Point(this.x - this.parent.GetPosRelativeToParent().X, this.y - this.parent.GetPosRelativeToParent().Y);
+			else
+				return new Point(this.x, this.y);
+		}
+
+		public Point GetPosRelativeToParentNonRecursive() {
+			if (this.hasParent && this.parent)
+				return new Point(this.x - this.parent.x, this.y - this.parent.y);
 			else
 				return new Point(this.x, this.y);
 		}
@@ -230,7 +238,12 @@ namespace DermaDesigner {
 		}
 
         public void SetParent(Panel p) {
-            if (p.canBeParent) {
+            if (p.canBeParent && this.canBeChild) {
+				if (this.hasParent && this.parent) {
+					this.parent.children.Remove(this);
+					if (this.parent.children.Count < 1)
+						this.parent.hasChildren = false;
+				}
                 this.parent = p;
                 p.children.Add(this);
                 this.hasParent = true;
