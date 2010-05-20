@@ -40,6 +40,8 @@ namespace DermaDesigner {
 		// this is to let is know whether to do SetVisible(false) on this control for lua
 		public bool visible;
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The controls type")]
+		public virtual string Type { get { return type; } }
+		[BrowsableAttribute(false)]
 		public virtual string type { get { return "Panel"; } }
 		public string varname;
 		// This makes it able to size or not in the editor, for instance in DLabel we don't need to resize
