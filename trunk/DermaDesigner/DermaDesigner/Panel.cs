@@ -53,13 +53,13 @@ namespace DermaDesigner {
 		#region Properties
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("X Position")]
 		public int X {
-			get { return GetPosRelativeToParent().X; }
+			get { return GetPosRelativeToParentNonRecursive().X; }
 			set { SetPosRelativeToParent(value, true); Derma.Repaint(); }
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Y Position")]
 		public int Y {
-			get { return GetPosRelativeToParent().Y; }
+			get { return GetPosRelativeToParentNonRecursive().Y; }
 			set { SetPosRelativeToParent(value, false); Derma.Repaint(); }
 		}
 

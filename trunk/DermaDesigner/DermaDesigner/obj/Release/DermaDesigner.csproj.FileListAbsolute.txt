@@ -58,9 +58,7 @@ Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.SaveLuaFile.resources
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Toolbox.resources
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\GenerateResource-ResGen.read.1.tlog
-Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\GenerateResource.read.1.tlog
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\GenerateResource-ResGen.write.1.tlog
-Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\GenerateResource.write.1.tlog
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.TrustInfo.xml
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe.manifest
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.application

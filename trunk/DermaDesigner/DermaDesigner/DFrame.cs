@@ -33,6 +33,7 @@ namespace DermaDesigner {
 		public bool deleteOnClose = false;
 		public bool closeButton = true;
 		public bool makePopup = true;
+		public bool bgblur = false;
 
 		#region Properties
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the window title")]
@@ -63,6 +64,12 @@ namespace DermaDesigner {
 		public bool MakePopup {
 			get { return makePopup; }
 			set { makePopup = value; }
+		}
+
+		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Blurs the background when the DFrame is shown")]
+		public bool SetBackgroundBlur {
+			get { return bgblur; }
+			set { bgblur = value; }
 		}
 		#endregion Properties
 
@@ -120,7 +127,7 @@ namespace DermaDesigner {
 			if (this.ShouldCenter())
 				code.AppendFormat("{0}:Center()\n", this.varname);
 			else
-				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParent().X, this.GetPosRelativeToParent().Y);
+				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParentNonRecursive().X, this.GetPosRelativeToParentNonRecursive().Y);
 
 			code.AppendFormat("{0}:SizeTitle('{1}')\n", this.varname, this.title);
 
@@ -135,6 +142,9 @@ namespace DermaDesigner {
 
 			if (!this.visible)
 				code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
+
+			if (this.bgblur)
+				code.AppendFormat("{0}:SetBackgroundBlur(true)\n", this.varname);
 
 			if (this.makePopup)
 				code.AppendFormat("{0}:MakePopup()\n", this.varname);
