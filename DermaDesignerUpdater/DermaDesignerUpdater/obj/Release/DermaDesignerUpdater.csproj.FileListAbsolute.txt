@@ -1,0 +1,28 @@
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\bin\Release\DermaDesignerUpdater.exe
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\bin\Release\DermaDesignerUpdater.pdb
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Main.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Properties.Resources.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.csproj.GenerateResource.Cache
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.exe
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.pdb
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.exe
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.exe
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.exe
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\ResolveAssemblyReference.cache
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Main.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Properties.Resources.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.read.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.write.1.tlog
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.exe
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.pdb
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.exe
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.pdb
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\ResolveAssemblyReference.cache
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Main.resources
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Properties.Resources.resources
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.read.1.tlog
+Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.write.1.tlog

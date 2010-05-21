@@ -79,7 +79,47 @@ namespace DermaDesigner {
 			}
 			/* end module registration */
 
+			Derma.GetWorkspace().GotFocus += new EventHandler(Program_GotFocus);
+			Derma.GetWorkspace().SizeChanged += new EventHandler(Program_GotFocus);
+			Derma.GetWorkspace().LostFocus += new EventHandler(Program_LostFocus);
+			ShowWindowInterop.ShowInactiveTopmost((Form)Derma.prop);
+			ShowWindowInterop.ShowInactiveTopmost((Form)Derma.toolbox);
+
             Application.Run(Derma.GetWorkspace());
         }
+
+		static void Program_LostFocus(object sender, EventArgs e) {
+			IntPtr FocusedWindow = ShowWindowInterop.GetForegroundWindowPtr();
+			if (Derma.toolbox.Handle == FocusedWindow || Derma.prop.Handle == FocusedWindow || Derma.GetWorkspace().Handle == FocusedWindow) {
+				return;
+			} else {
+				ShowWindowInterop.HideTarget(Derma.toolbox);
+				ShowWindowInterop.HideTarget(Derma.prop);
+			}
+		}
+
+		static void Program_GotFocus(object sender, EventArgs e) {
+			Main workspace = (Main)sender;
+			if (workspace.WindowState == FormWindowState.Normal) {
+				if (Derma.toolbox.WindowState != FormWindowState.Normal) {
+					Derma.toolbox.WindowState = FormWindowState.Normal;
+				}
+				if (Derma.prop.WindowState != FormWindowState.Normal) {
+					Derma.prop.WindowState = FormWindowState.Normal;
+				}
+				ShowWindowInterop.ShowInactiveTopmost((Form)Derma.prop);
+				ShowWindowInterop.ShowInactiveTopmost((Form)Derma.toolbox);
+				workspace.BringToFront();
+				workspace.Activate();
+			} else if (workspace.WindowState == FormWindowState.Minimized) {
+				if (Derma.toolbox.WindowState != FormWindowState.Minimized) {
+					Derma.toolbox.WindowState = FormWindowState.Minimized;
+				}
+				if (Derma.prop.WindowState != FormWindowState.Minimized) {
+					Derma.prop.WindowState = FormWindowState.Minimized;
+				}
+			}
+
+		}
     }
 }
