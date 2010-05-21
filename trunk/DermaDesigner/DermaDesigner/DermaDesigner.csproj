@@ -80,52 +80,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DButton.cs" />
-    <Compile Include="DCheckBox.cs" />
-    <Compile Include="Derma.cs" />
-    <Compile Include="DFrame.cs" />
-    <Compile Include="DImage.cs" />
-    <Compile Include="DImageButton.cs" />
-    <Compile Include="DLabel.cs" />
-    <Compile Include="DTextEntry.cs" />
-    <Compile Include="FindPanelByVar.cs">
+    <Compile Include="Base\VirtualKeys.cs" />
+    <Compile Include="Base\WindowInterop.cs" />
+    <Compile Include="Controls\DButton.cs" />
+    <Compile Include="Controls\DCheckBox.cs" />
+    <Compile Include="Base\Derma.cs" />
+    <Compile Include="Controls\DFrame.cs" />
+    <Compile Include="Controls\DImage.cs" />
+    <Compile Include="Controls\DImageButton.cs" />
+    <Compile Include="Controls\DLabel.cs" />
+    <Compile Include="Controls\DNumberWang.cs" />
+    <Compile Include="Controls\DPanel.cs" />
+    <Compile Include="Controls\DTextEntry.cs" />
+    <Compile Include="GUI\FindPanelByVar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FindPanelByVar.Designer.cs">
+    <Compile Include="GUI\FindPanelByVar.Designer.cs">
       <DependentUpon>FindPanelByVar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="GUI\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="LargeTextBox.cs">
+    <Compile Include="GUI\LargeTextBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LargeTextBox.Designer.cs">
+    <Compile Include="GUI\LargeTextBox.Designer.cs">
       <DependentUpon>LargeTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel.cs">
+    <Compile Include="Controls\Panel.cs">
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="PropertiesWindow.cs">
+    <Compile Include="GUI\PropertiesWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PropertiesWindow.Designer.cs">
+    <Compile Include="GUI\PropertiesWindow.Designer.cs">
       <DependentUpon>PropertiesWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FindPanelByVar.resx">
+    <EmbeddedResource Include="GUI\FindPanelByVar.resx">
       <DependentUpon>FindPanelByVar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LargeTextBox.resx">
+    <EmbeddedResource Include="GUI\LargeTextBox.resx">
       <DependentUpon>LargeTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertiesWindow.resx">
+    <EmbeddedResource Include="GUI\PropertiesWindow.resx">
       <DependentUpon>PropertiesWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -133,10 +137,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaveLuaFile.resx">
+    <EmbeddedResource Include="GUI\SaveLuaFile.resx">
       <DependentUpon>SaveLuaFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Toolbox.resx">
+    <EmbeddedResource Include="GUI\Toolbox.resx">
       <DependentUpon>Toolbox.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -157,17 +161,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ResizeGrip.cs" />
-    <Compile Include="SaveLuaFile.cs">
+    <Compile Include="Base\ResizeGrip.cs" />
+    <Compile Include="GUI\SaveLuaFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SaveLuaFile.Designer.cs">
+    <Compile Include="GUI\SaveLuaFile.Designer.cs">
       <DependentUpon>SaveLuaFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Toolbox.cs">
+    <Compile Include="GUI\Toolbox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Toolbox.Designer.cs">
+    <Compile Include="GUI\Toolbox.Designer.cs">
       <DependentUpon>Toolbox.cs</DependentUpon>
     </Compile>
   </ItemGroup>
