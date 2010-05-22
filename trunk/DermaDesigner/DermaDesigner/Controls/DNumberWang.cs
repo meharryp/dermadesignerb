@@ -43,12 +43,11 @@ namespace DermaDesigner {
 			set {
 				if (value < this.min || value > this.max)
 					MessageBox.Show("Property Value is not valid", "Properties Window");
-				else if (value >= this.min && value <= this.max)
+				else
 					this.val = value;
 
 				this.textSize = Derma.GetTextSize(this.val.ToString());
 				Derma.Repaint();
-
 			}
 		}
 
