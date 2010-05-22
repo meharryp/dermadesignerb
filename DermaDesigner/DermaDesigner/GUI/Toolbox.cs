@@ -24,7 +24,7 @@ namespace DermaDesigner {
 		}
 
 		private void controlPanel_MouseMove(object sender, MouseEventArgs e) {
-			if (e.Button == MouseButtons.Left && !this.dragging) {
+			if (this.controlPanel.SelectedItems.Count > 0 && e.Button == MouseButtons.Left && !this.dragging) {
 				this.DoDragDrop(this.controlPanel.SelectedItems[0].Text, DragDropEffects.Copy | DragDropEffects.Move);
 				this.dragging = true;
 			} else if (e.Button != MouseButtons.Left && this.dragging)

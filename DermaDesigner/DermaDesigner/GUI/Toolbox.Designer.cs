@@ -37,8 +37,10 @@
 			this.controlPanel.AllowDrop = true;
 			this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.controlPanel.Location = new System.Drawing.Point(0, 0);
+			this.controlPanel.MultiSelect = false;
 			this.controlPanel.Name = "controlPanel";
 			this.controlPanel.Size = new System.Drawing.Size(234, 316);
+			this.controlPanel.Sorting = System.Windows.Forms.SortOrder.Ascending;
 			this.controlPanel.TabIndex = 2;
 			this.controlPanel.UseCompatibleStateImageBehavior = false;
 			this.controlPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.controlPanel_MouseMove);

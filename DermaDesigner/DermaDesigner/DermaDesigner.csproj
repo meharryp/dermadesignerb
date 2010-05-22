@@ -85,10 +85,12 @@
     <Compile Include="Controls\DButton.cs" />
     <Compile Include="Controls\DCheckBox.cs" />
     <Compile Include="Base\Derma.cs" />
+    <Compile Include="Controls\DComboBox.cs" />
     <Compile Include="Controls\DFrame.cs" />
     <Compile Include="Controls\DImage.cs" />
     <Compile Include="Controls\DImageButton.cs" />
     <Compile Include="Controls\DLabel.cs" />
+    <Compile Include="Controls\DMultiChoice.cs" />
     <Compile Include="Controls\DNumberWang.cs" />
     <Compile Include="Controls\DPanel.cs" />
     <Compile Include="Controls\DTextEntry.cs" />
