@@ -9,15 +9,21 @@ using System.ComponentModel;
 
 namespace DermaDesigner {
     public abstract class Panel {
-		public int x;
+        [PackerAttrib()]
+        public int x;
+        [PackerAttrib()]
 		public int y;
+        [PackerAttrib()]
 		public int height;
+        [PackerAttrib()]
 		public int width;
 		public int dragOffsetX;
 		public int dragOffsetY;
+        [PackerAttrib()]
 		public float z;
 		public bool highlighted;
 		// this is for the designer to know whether to treat this control like it exists or not
+        [PackerAttrib()]
 		public bool hidden;
 		public List<Panel> children;
 		public MouseEventHandler MouseClickHandler;
@@ -27,6 +33,7 @@ namespace DermaDesigner {
 		public MouseEventHandler MouseMoveHandler;
 		public MouseEventHandler MouseWheelHandler;
 
+        [PackerAttrib()]
 		public Panel parent;
 		[BrowsableAttribute(false)]
 		public virtual bool canBeParent { get { return true; } }
@@ -36,21 +43,29 @@ namespace DermaDesigner {
 		public bool hasChildren;
 		public bool dragging;
 		public bool locked;
+        [PackerAttrib()]
 		public bool centered;
 		// this is to let is know whether to do SetVisible(false) on this control for lua
+        [PackerAttrib()]
 		public bool visible;
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The controls type")]
+        [PackerAttrib()]
 		public virtual string Type { get { return type; } }
 		[BrowsableAttribute(false)]
+        [PackerAttrib()]
 		public virtual string type { get { return "Panel"; } }
+        [PackerAttrib()]
 		public string varname;
 		// This makes it able to size or not in the editor, for instance in DLabel we don't need to resize
 		// this doesn't correlate to lua's SetSizable
 		[BrowsableAttribute(false)]
+        [PackerAttrib()]
 		public virtual bool sizable { get { return true; } }
 		[BrowsableAttribute(false)]
+        [PackerAttrib()]
 		public virtual bool sizablex { get { return true; } }
 		[BrowsableAttribute(false)]
+        [PackerAttrib()]
 		public virtual bool sizabley { get { return true; } }
 
 		public Image thumbnail;

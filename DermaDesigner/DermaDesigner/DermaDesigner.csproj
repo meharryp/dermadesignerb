@@ -80,6 +80,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\DPacker.cs" />
+    <Compile Include="Base\DPanelInfo.cs" />
+    <Compile Include="Base\DVersioner.cs" />
+    <Compile Include="Base\PackerAttrib.cs" />
     <Compile Include="Base\VirtualKeys.cs" />
     <Compile Include="Base\WindowInterop.cs" />
     <Compile Include="Controls\DButton.cs" />
