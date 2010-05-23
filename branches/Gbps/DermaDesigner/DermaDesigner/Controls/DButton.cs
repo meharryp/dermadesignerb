@@ -114,6 +114,7 @@ namespace DermaDesigner {
 		}
 
 		public override string GenerateLua() {
+            DPacker.PanelToInfo(this);
 			StringBuilder code = new StringBuilder("\n");
 			code.AppendFormat("local {0} = vgui.Create('DButton')\n", this.varname);
 

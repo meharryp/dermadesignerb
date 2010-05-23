@@ -63,3 +63,25 @@ Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe.manifest
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.application
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.FindPanelByVar.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.exe.config
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.pdb
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.exe.manifest
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.application
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.exe
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.pdb
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\ResolveAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.FindPanelByVar.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Main.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.LargeTextBox.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.PropertiesWindow.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Properties.Resources.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.SaveLuaFile.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Toolbox.resources
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\ResGen.read.1.tlog
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\ResGen.write.1.tlog
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.TrustInfo.xml
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe.manifest
+C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.application
