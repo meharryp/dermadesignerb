@@ -33,7 +33,6 @@ namespace DermaDesigner {
 		public MouseEventHandler MouseMoveHandler;
 		public MouseEventHandler MouseWheelHandler;
 
-        [PackerAttrib()]
 		public Panel parent;
 		[BrowsableAttribute(false)]
 		public virtual bool canBeParent { get { return true; } }
@@ -49,23 +48,18 @@ namespace DermaDesigner {
         [PackerAttrib()]
 		public bool visible;
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The controls type")]
-        [PackerAttrib()]
 		public virtual string Type { get { return type; } }
 		[BrowsableAttribute(false)]
-        [PackerAttrib()]
 		public virtual string type { get { return "Panel"; } }
         [PackerAttrib()]
 		public string varname;
 		// This makes it able to size or not in the editor, for instance in DLabel we don't need to resize
 		// this doesn't correlate to lua's SetSizable
 		[BrowsableAttribute(false)]
-        [PackerAttrib()]
 		public virtual bool sizable { get { return true; } }
 		[BrowsableAttribute(false)]
-        [PackerAttrib()]
 		public virtual bool sizablex { get { return true; } }
 		[BrowsableAttribute(false)]
-        [PackerAttrib()]
 		public virtual bool sizabley { get { return true; } }
 
 		public Image thumbnail;
