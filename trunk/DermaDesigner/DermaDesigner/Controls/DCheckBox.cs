@@ -127,7 +127,7 @@ namespace DermaDesigner {
                 code.AppendFormat("{0}:SetConVar({1})\n", this.varname, this.ConFunc);
 
 			if (this.ClickFunc.Trim() != "")
-				code.AppendFormat("{0}.DoClick() = {1}\n", this.varname, this.ClickFunc);
+				code.AppendFormat("{0}.DoClick = {1}\n", this.varname, this.ClickFunc);
 
             if (!this.visible)
                 code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
