@@ -1,8 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\bin\Debug\DermaDesignerUpdater.exe
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\bin\Debug\DermaDesignerUpdater.pdb
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Debug\DermaDesignerUpdater.Main.resources
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Debug\DermaDesignerUpdater.Properties.Resources.resources
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Debug\DermaDesignerUpdater.csproj.GenerateResource.Cache
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Debug\DermaDesignerUpdater.exe
-C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesignerUpdater\DermaDesignerUpdater\obj\Debug\DermaDesignerUpdater.pdb

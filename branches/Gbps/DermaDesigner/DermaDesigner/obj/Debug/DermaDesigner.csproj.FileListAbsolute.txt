@@ -1,5 +1,0 @@
-Z:\Users\Zachary\Documents\Visual Studio 2008\Projects\DermaDesigner\DermaDesigner\obj\Debug\ResolveAssemblyReference.cache
-Z:\Users\Zachary\Documents\Visual Studio 2008\Projects\DermaDesigner\DermaDesigner\obj\Debug\DermaDesigner.Form1.resources
-Z:\Users\Zachary\Documents\Visual Studio 2008\Projects\DermaDesigner\DermaDesigner\obj\Debug\DermaDesigner.Properties.Resources.resources
-Z:\Users\Zachary\Documents\Visual Studio 2008\Projects\DermaDesigner\DermaDesigner\obj\Debug\DermaDesigner.Toolbox.resources
-Z:\Users\Zachary\Documents\Visual Studio 2008\Projects\DermaDesigner\DermaDesigner\obj\Debug\DermaDesigner.csproj.GenerateResource.Cache
