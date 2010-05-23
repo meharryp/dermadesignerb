@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Drawing;
@@ -114,7 +115,7 @@ namespace DermaDesigner {
 		}
 
 		public override string GenerateLua() {
-            DPacker.PanelToInfo(this);
+		    File.WriteAllText("derp2.txt",Convert.ToString(pak.PanelData.Count()));
 			StringBuilder code = new StringBuilder("\n");
 			code.AppendFormat("local {0} = vgui.Create('DButton')\n", this.varname);
 
