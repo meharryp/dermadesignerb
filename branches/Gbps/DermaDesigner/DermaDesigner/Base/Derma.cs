@@ -93,6 +93,7 @@ namespace DermaDesigner {
 			fontCollection.AddFontFile("resources/defaultFont.ttf");
 			DefaultFontFamily = fontCollection.Families[0];
 			DefaultFont = new Font(DefaultFontFamily, 6);
+            DSave.SetEnvironment("Untitled.ddproj");
 		}
 		#endregion Init
 

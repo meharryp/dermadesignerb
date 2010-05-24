@@ -1,0 +1,392 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="42" />
+      <Item value="DVersioner`0" priority="0" />
+      <Item value="List" priority="10" />
+      <Item value="Panel`0" priority="9" />
+      <Item value="System" priority="0" />
+      <Item value="Attribute`0" priority="0" />
+      <Item value="PackerAttrib`0" priority="0" />
+      <Item value="Dictionary" priority="2" />
+      <Item value="string" priority="18" />
+      <Item value="object" priority="9" />
+      <Item value="void" priority="20" />
+      <Item value="Input" priority="7" />
+      <Item value="T`0" priority="2" />
+      <Item value="in" priority="12" />
+      <Item value="Type`0" priority="4" />
+      <Item value="InputType" priority="1" />
+      <Item value="fields" priority="4" />
+      <Item value="for" priority="0" />
+      <Item value="KeyNotFoundException`0" priority="0" />
+      <Item value="FieldInfo`0" priority="4" />
+      <Item value="FInfo" priority="13" />
+      <Item value="typeof" priority="15" />
+      <Item value="if" priority="23" />
+      <Item value="FInfoAttribs" priority="2" />
+      <Item value="Count`1" priority="1" />
+      <Item value="Any`1" priority="2" />
+      <Item value="DPacker`0" priority="11" />
+      <Item value="DButton`0" priority="1" />
+      <Item value="MessageBox`0" priority="2" />
+      <Item value="ValidationConstraints`0" priority="1" />
+      <Item value="val" priority="7" />
+      <Item value="Convert`0" priority="6" />
+      <Item value="DPanelInfo`0" priority="10" />
+      <Item value="switch" priority="0" />
+      <Item value="case" priority="0" />
+      <Item value="break" priority="0" />
+      <Item value="t" priority="6" />
+      <Item value="byte" priority="14" />
+      <Item value="Data" priority="12" />
+      <Item value="key" priority="9" />
+      <Item value="ifo" priority="12" />
+      <Item value="Encoding`0" priority="3" />
+      <Item value="new" priority="27" />
+      <Item value="DPanelInfo" priority="0" />
+      <Item value="else" priority="13" />
+      <Item value="int" priority="10" />
+      <Item value="return" priority="29" />
+      <Item value="true" priority="3" />
+      <Item value="Concat`1" priority="0" />
+      <Item value="FInfoAttribs_CA" priority="2" />
+      <Item value="PanelData" priority="8" />
+      <Item value="static" priority="15" />
+      <Item value="List&lt;DPanelInfo&gt;" priority="1" />
+      <Item value="ParentIndex" priority="3" />
+      <Item value="BinaryFormatter" priority="1" />
+      <Item value="BFormat" priority="3" />
+      <Item value="info" priority="0" />
+      <Item value="IEnumerable" priority="0" />
+      <Item value="StreamingContext`0" priority="0" />
+      <Item value="Stream`0" priority="0" />
+      <Item value="SerializeStream" priority="0" />
+      <Item value="MemoryStream`0" priority="1" />
+      <Item value="MemoryStream" priority="1" />
+      <Item value="MemStream" priority="2" />
+      <Item value="List&lt;byte[]&gt;" priority="0" />
+      <Item value="foreach" priority="11" />
+      <Item value="PanelDataSerialized" priority="0" />
+      <Item value="DPacker" priority="3" />
+      <Item value="pak" priority="8" />
+      <Item value="FileDialog`0" priority="0" />
+      <Item value="Dictionary&lt;string,byte[]&gt;" priority="0" />
+      <Item value="BinaryFormatter`0" priority="0" />
+      <Item value="dat" priority="1" />
+      <Item value="Begin" priority="0" />
+      <Item value="deS" priority="0" />
+      <Item value="try" priority="6" />
+      <Item value="catch" priority="8" />
+      <Item value="bool" priority="5" />
+      <Item value="private" priority="3" />
+      <Item value="TypeConverter`0" priority="0" />
+      <Item value="TypeConverter" priority="0" />
+      <Item value="where" priority="1" />
+      <Item value="Panel" priority="9" />
+      <Item value="Derma`0" priority="15" />
+      <Item value="null" priority="12" />
+      <Item value="p" priority="34" />
+      <Item value="FieldInfo" priority="0" />
+      <Item value="List&lt;FieldInfo&gt;" priority="0" />
+      <Item value="continue" priority="4" />
+      <Item value="WorkingTable" priority="1" />
+      <Item value="RequestedType" priority="4" />
+      <Item value="GetInt`0" priority="0" />
+      <Item value="GetBool`0" priority="0" />
+      <Item value="GetString`0" priority="0" />
+      <Item value="char" priority="0" />
+      <Item value="GetChar`0" priority="0" />
+      <Item value="double" priority="0" />
+      <Item value="GetDouble`0" priority="0" />
+      <Item value="SavedProp" priority="0" />
+      <Item value="test" priority="1" />
+      <Item value="InsertPanelInfo`0" priority="3" />
+      <Item value="PanelToInfo`1" priority="4" />
+      <Item value="Dictionary&lt;Panel,DPanelInfo&gt;" priority="0" />
+      <Item value="BasePanelDict" priority="0" />
+      <Item value="pifo" priority="0" />
+      <Item value="TempPanelDict" priority="2" />
+      <Item value="ParentInfo" priority="1" />
+      <Item value="List&lt;Panel&gt;" priority="1" />
+      <Item value="while" priority="0" />
+      <Item value="Plist" priority="0" />
+      <Item value="FileStream`0" priority="1" />
+      <Item value="File`0" priority="1" />
+      <Item value="Fstream" priority="7" />
+      <Item value="Byte`0" priority="3" />
+      <Item value="GetData`0" priority="0" />
+      <Item value="filename" priority="3" />
+      <Item value="buffer" priority="1" />
+      <Item value="Length" priority="0" />
+      <Item value="SetData`0" priority="0" />
+      <Item value="PanelFromPanelInfo`0" priority="0" />
+      <Item value="p2" priority="0" />
+      <Item value="BitConverter`0" priority="2" />
+      <Item value="float" priority="0" />
+      <Item value="false" priority="0" />
+      <Item value="HasSaved" priority="1" />
+      <Item value="CurrentFilename" priority="2" />
+      <Item value="Packer" priority="1" />
+      <Item value="SetEnvironment`0" priority="2" />
+      <Item value="Save`0" priority="0" />
+      <Item value="PList" priority="1" />
+      <Item value="P" priority="0" />
+      <Item value="Exception`0" priority="1" />
+      <Item value="e" priority="0" />
+      <Item value="OK" priority="0" />
+      <Item value="Error" priority="0" />
+      <Item value="Button1" priority="0" />
+      <Item value="OpenFileDialog`0" priority="0" />
+      <Item value="GetOpenDialog`0" priority="0" />
+      <Item value="GetSaveDialog`0" priority="0" />
+      <Item value="DSave`0" priority="7" />
+      <Item value="OpenDialog" priority="2" />
+      <Item value="this" priority="0" />
+      <Item value="SaveDialog" priority="0" />
+      <Item value="PropertyInfo`0" priority="0" />
+      <Item value="GetSaveableProperties`1" priority="0" />
+      <Item value="Join`4" priority="0" />
+      <Item value="FInfoAttribs_ED" priority="0" />
+      <Item value="SerializeStringList`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:">
+      <Item value="GetType`0" priority="1" />
+      <Item value="parent" priority="1" />
+      <Item value="hasParent" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="Attributes" priority="0" />
+      <Item value="GetCustomAttributes`0" priority="0" />
+      <Item value="GetFields`0" priority="0" />
+      <Item value="GetProperties`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.FieldInfo">
+      <Item value="Attributes" priority="0" />
+      <Item value="GetCustomAttributes`0" priority="2" />
+      <Item value="Name" priority="2" />
+      <Item value="GetValue`0" priority="0" />
+      <Item value="GetType`0" priority="1" />
+      <Item value="SetValue`0" priority="2" />
+      <Item value="FieldType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DermaDesigner.DPacker">
+      <Item value="PanelToInfo`1" priority="1" />
+      <Item value="PanelFromPanelInfo`0" priority="0" />
+      <Item value="DeSerializeStringList`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="GetType`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToString`0" priority="1" />
+      <Item value="ToByte`0" priority="1" />
+      <Item value="ToInt32`0" priority="0" />
+      <Item value="ToBoolean`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="2" />
+      <Item value="TryGetValue`0" priority="0" />
+      <Item value="ContainsKey`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DermaDesigner.DPanelInfo">
+      <Item value="Insert`0" priority="4" />
+      <Item value="GetBytes`0" priority="0" />
+      <Item value="Data" priority="0" />
+      <Item value="Find`0" priority="0" />
+      <Item value="GetInt`0" priority="0" />
+      <Item value="GetObject`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="UTF8" priority="2" />
+      <Item value="ASCII" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Encoding">
+      <Item value="GetBytes`0" priority="3" />
+      <Item value="GetString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="1" />
+      <Item value="Count" priority="2" />
+      <Item value="Insert`0" priority="1" />
+      <Item value="IndexOf`0" priority="3" />
+      <Item value="GetType`0" priority="0" />
+      <Item value="Clear`0" priority="2" />
+      <Item value="ToArray`0" priority="0" />
+      <Item value="Concat`1" priority="0" />
+      <Item value="RemoveAll`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter">
+      <Item value="Serialize`0" priority="1" />
+      <Item value="Deserialize`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.MemoryStream">
+      <Item value="ToArray`0" priority="0" />
+      <Item value="Write`0" priority="0" />
+      <Item value="Seek`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DermaDesigner.DPacker">
+      <Item value="InsertPanelInfo`0" priority="1" />
+      <Item value="GetBytes`0" priority="0" />
+      <Item value="SetData`0" priority="0" />
+      <Item value="PanelData" priority="2" />
+      <Item value="PackAllToFile`0" priority="1" />
+      <Item value="ReadAllFromFile`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="WriteAllBytes`0" priority="1" />
+      <Item value="WriteAllText`0" priority="0" />
+      <Item value="OpenWrite`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DermaDesigner.Derma">
+      <Item value="New`0" priority="2" />
+      <Item value="GetPanels`0" priority="6" />
+      <Item value="GetWorkspace`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DermaDesigner.Panel">
+      <Item value="SetParent`0" priority="1" />
+      <Item value="Parent" priority="1" />
+      <Item value="hasParent" priority="1" />
+      <Item value="parent" priority="0" />
+      <Item value="children" priority="0" />
+      <Item value="parentIdentifier" priority="3" />
+      <Item value="Remove`0" priority="1" />
+      <Item value="SetPosRelativeToParent`0" priority="0" />
+      <Item value="x" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Write`0" priority="0" />
+      <Item value="Close`0" priority="1" />
+      <Item value="Unlock`0" priority="0" />
+      <Item value="Read`0" priority="1" />
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.BitConverter">
+      <Item value="GetBytes`0" priority="0" />
+      <Item value="ToDouble`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Form">
+      <Item value="Container" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DermaDesigner.Main">
+      <Item value="OpenDialog" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.OpenFileDialog">
+      <Item value="CheckFileExists" priority="0" />
+      <Item value="FileName" priority="1" />
+      <Item value="ShowDialog`0" priority="1" />
+      <Item value="OpenFile`0" priority="0" />
+      <Item value="FileNames" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetFileName`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.SaveFileDialog">
+      <Item value="FileName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DermaDesigner.DSave">
+      <Item value="GetEnvironment`0" priority="0" />
+      <Item value="Save`0" priority="0" />
+      <Item value="SetEnvironment`0" priority="1" />
+      <Item value="SaveAs`0" priority="0" />
+      <Item value="ClearAll`0" priority="0" />
+      <Item value="Load`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
+      <Item value="PropertyType" priority="0" />
+      <Item value="GetSetMethod`0" priority="0" />
+      <Item value="GetCustomAttributes`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MethodInfo">
+      <Item value="IsDefined`0" priority="0" />
+      <Item value="IsPublic" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:PackerAttrib.cs" caret="359" fromTop="12" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/f:DVersioner.cs" caret="273" fromTop="17" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DTextEntry.cs" caret="0" fromTop="0" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DFrame.cs" caret="2864" fromTop="23" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DImageButton.cs" caret="3659" fromTop="17" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DCheckBox.cs" caret="526" fromTop="14" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DButton.cs" caret="5793" fromTop="20" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DImage.cs" caret="1490" fromTop="31" />
+      <File id="d:Miscellaneous Files/f:Dictionary.cs/l:C!?Users?Michael?AppData?Local?Symbols?src?source?Dotnetfx_Win7_3.5.1?3.5.1?DEVDIV?depot?DevDiv?releases?whidbey?NetFXspW7?ndp?clr?src?BCL?System?Collections?Generic?Dictionary.cs?1?Dictionary.cs" caret="9112" fromTop="21" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:PropertiesWindow.cs" caret="823" fromTop="15" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/f:ResizeGrip.cs" caret="4895" fromTop="18" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/f:VirtualKeys.cs" caret="1412" fromTop="65" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/f:WindowInterop.cs" caret="0" fromTop="0" />
+      <File id="DE0F9882-E241-4D51-B221-0C93208074F5/f:Program.cs" caret="0" fromTop="0" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/f:Derma.cs" caret="3666" fromTop="25" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.Designer.cs" caret="26497" fromTop="18" />
+      <File id="d:Miscellaneous Files/f:OpenFileDialog.cs/l:C!?Users?Michael?AppData?Local?Symbols?src?source?Dotnetfx_Win7_3.5.1?3.5.1?DEVDIV?depot?DevDiv?releases?whidbey?NetFXspW7?ndp?fx?src?WinForms?Managed?System?WinForms?OpenFileDialog.cs?1?OpenFileDialog.cs" caret="5330" fromTop="0" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DSave.cs" caret="667" fromTop="22" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="6379" fromTop="17" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DLabel.cs" caret="1118" fromTop="6" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DNumberWang.cs" caret="1020" fromTop="0" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DComboBox.cs" caret="0" fromTop="0" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPanelInfo.cs" caret="3185" fromTop="33" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="2868" fromTop="20" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DPanel.cs" caret="1901" fromTop="25" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:Panel.cs" caret="6193" fromTop="5" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/f:Program.cs" caret="1092" fromTop="16" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="6359" fromTop="10" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/f:Derma.cs" caret="3821" fromTop="28" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="7072" fromTop="19" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="6110" fromTop="7" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DSave.cs" caret="423" fromTop="15" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DSave.cs" caret="845" fromTop="25" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="6783" fromTop="19" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="6603" fromTop="14" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:GUI/f:Main.cs" caret="7045" fromTop="28" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="7215" fromTop="3" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="9224" fromTop="33" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="8745" fromTop="9" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="4081" fromTop="32" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="4064" fromTop="31" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="3480" fromTop="13" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="5809" fromTop="23" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="2892" fromTop="20" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Controls/f:DNumberWang.cs" caret="3415" fromTop="26" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="4800" fromTop="19" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="248" fromTop="8" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="5835" fromTop="20" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="6026" fromTop="29" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="6328" fromTop="28" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="6672" fromTop="28" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="8578" fromTop="18" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="9821" fromTop="35" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="9990" fromTop="37" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPanelInfo.cs" caret="3044" fromTop="30" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPanelInfo.cs" caret="3186" fromTop="33" />
+      <File id="9A2D538E-A582-479D-8905-3EC73C3C8F68/d:Base/d:DPacker/f:DPacker.cs" caret="6496" fromTop="19" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

@@ -39,7 +39,8 @@ namespace DermaDesigner {
 		private SizeF textSize = Derma.GetTextSize("0");
 
 		// Lua variables
-		public float val = 0;
+        [PackerAttrib()]
+        public float val = 0;
 		public float min = 0;
 		public float max = 1;
 		public int decimals = 0;
@@ -51,7 +52,8 @@ namespace DermaDesigner {
 		public string OnValueChangedFunc = "function() end";
 
 		#region Properties
-		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the initial value of the DNumSlider")]
+        [PackerAttrib(true)]
+        [CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the initial value of the DNumSlider")]
 		public float InitialValue {
 			get { return val; }
 			set {
