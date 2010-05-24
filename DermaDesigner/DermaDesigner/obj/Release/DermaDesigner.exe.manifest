@@ -57,14 +57,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DermaDesigner.exe" size="323584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DermaDesigner.exe" size="326656">
       <assemblyIdentity name="DermaDesigner" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ApV9Ub7DUTMzPhjl9g+nd/R2MoU=</dsig:DigestValue>
+        <dsig:DigestValue>ZDbq9ySmApCl0My3G7nTLW0Rj7Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

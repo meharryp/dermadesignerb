@@ -115,7 +115,6 @@ namespace DermaDesigner {
 		}
 
 		public override string GenerateLua() {
-		    File.WriteAllText("derp2.txt",Convert.ToString(pak.PanelData.Count()));
 			StringBuilder code = new StringBuilder("\n");
 			code.AppendFormat("local {0} = vgui.Create('DButton')\n", this.varname);
 
