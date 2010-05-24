@@ -10,6 +10,7 @@ using System.IO;
 
 namespace DermaDesigner {
     public class Derma {
+        private static DProf Profiler;
         private static Form workspace;							// the form in which new panels will appear
 		public static PropertiesWindow prop;					// the form that will display the selected control's properties
 		public static Toolbox toolbox;							// the global variable to store the toobox form in
@@ -48,9 +49,10 @@ namespace DermaDesigner {
 		public static FontFamily DefaultFontFamily;
 		public static Font DefaultFont;
 		public static SolidBrush fontBrush = new SolidBrush(Color.LightGray);
-
+        public static DateTime lastPaint = DateTime.Now;
 		// TODO: Make all mouse handlers check if the control is hidden via p.hidden
 
+        public static bool NeedsRefresh = false;
 		#region Init
 		public static void Init(Form mainform, PropertiesWindow prp, Toolbox tb) {
             workspace = mainform;
@@ -62,6 +64,7 @@ namespace DermaDesigner {
 
 			Tick.Interval = 20;
 			Tick.Tick += TickEvent;
+            Tick.Tick += new EventHandler(RepaintTick);
 			Tick.Start();
 
 			// for big logo
@@ -252,11 +255,44 @@ namespace DermaDesigner {
 		#endregion GetHighlightedPanel
 
 		#region Repaint
-		public static void Repaint() {
-			// which one is better?
+
+        public static bool CanRepaint()
+        {
+            double millisecs = (DateTime.Now - lastPaint).TotalMilliseconds;
+            if (millisecs >= 1000/60)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
+        public static void Repaint() {
+			if(Profiler == null){Profiler=new DProf("Derma.Repaint");}
+            // which one is better?
 			//workspace.Invalidate();
-			workspace.Refresh();
+            if (CanRepaint())
+            {
+                Profiler.Start();
+                workspace.Refresh();
+                Profiler.End();
+                ((Main)workspace)._DebugLabelMain.Text = Profiler.GetSpew();
+                lastPaint = DateTime.Now;
+                NeedsRefresh = false;
+            }else
+            {
+                NeedsRefresh = true;
+            }
+            
 		}
+        public static void RepaintTick(object s, EventArgs e)
+        {
+            if (CanRepaint() && NeedsRefresh)
+            {
+                Repaint();
+            }
+        }
 		#endregion Repaint
 
 		#region ResortPanelsByZ
@@ -448,9 +484,10 @@ namespace DermaDesigner {
 							}
 						}
 					}
+
 				}
 
-				Repaint();
+				
 			}
 		}
 		#endregion MouseHandlers

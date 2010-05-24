@@ -85,13 +85,25 @@ namespace DermaDesigner {
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the height of this control")]
 		public int Height {
 			get { return height; }
-			set { height = value; Derma.Repaint(); }
+            set { 
+                    if (sizable && sizabley)
+                    {
+                      height = value; Derma.Repaint();
+                    }
+                }
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the width of this control")]
 		public int Width {
 			get { return width; }
-			set { width = value; Derma.Repaint(); }
+			set
+			{
+                if (sizable && sizablex)
+                {
+                    width = value;
+                    Derma.Repaint();
+                }
+			}
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the depth at which to draw this control")]

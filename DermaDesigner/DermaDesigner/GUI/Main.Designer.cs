@@ -68,6 +68,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
+            this._DebugLabelMain = new System.Windows.Forms.Label();
             this.FormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -369,7 +370,6 @@
             // 
             // SaveDialog
             // 
-            this.SaveDialog.CreatePrompt = true;
             this.SaveDialog.DefaultExt = "ddproj";
             this.SaveDialog.Filter = "Derma Designer Files|*.ddproj|All files|*.*";
             this.SaveDialog.Title = "Choose a Derma Designer Project File";
@@ -383,12 +383,25 @@
             this.OpenDialog.Title = "Choose a Derma Designer Project File to Load";
             this.OpenDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenDialog_FileOk);
             // 
+            // _DebugLabelMain
+            // 
+            this._DebugLabelMain.AutoSize = true;
+            this._DebugLabelMain.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._DebugLabelMain.ForeColor = System.Drawing.Color.Green;
+            this._DebugLabelMain.Location = new System.Drawing.Point(0, 24);
+            this._DebugLabelMain.Name = "_DebugLabelMain";
+            this._DebugLabelMain.Size = new System.Drawing.Size(112, 15);
+            this._DebugLabelMain.TabIndex = 1;
+            this._DebugLabelMain.Text = "_DebugLabelMain";
+            this._DebugLabelMain.UseMnemonic = false;
+            // 
             // Main
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 448);
+            this.Controls.Add(this._DebugLabelMain);
             this.Controls.Add(this.FormMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -452,6 +465,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public System.Windows.Forms.SaveFileDialog SaveDialog;
         public System.Windows.Forms.OpenFileDialog OpenDialog;
+        public System.Windows.Forms.Label _DebugLabelMain;
     }
 }
 

@@ -39,7 +39,7 @@
             this.controlPanel.Location = new System.Drawing.Point(0, 0);
             this.controlPanel.MultiSelect = false;
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(313, 316);
+            this.controlPanel.Size = new System.Drawing.Size(251, 316);
             this.controlPanel.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.controlPanel.TabIndex = 2;
             this.controlPanel.UseCompatibleStateImageBehavior = false;
@@ -50,7 +50,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(313, 316);
+            this.ClientSize = new System.Drawing.Size(251, 316);
             this.Controls.Add(this.controlPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

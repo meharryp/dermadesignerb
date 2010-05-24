@@ -141,7 +141,7 @@ namespace DermaDesigner.Controls
             if (this.parent != null)
                 code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
-            code.AppendFormat("{0}:SetSize({1}, {2})\n", this.varname, 76, 92);
+            //code.AppendFormat("{0}:SetSize({1}, {2})\n", this.varname, 76, 92);
 
             if (this.ShouldCenter())
                 code.AppendFormat("{0}:Center()\n", this.varname);

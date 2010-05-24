@@ -115,6 +115,7 @@
     <Compile Include="Base\DPacker\DPacker.cs" />
     <Compile Include="Base\DPacker\DPanelInfo.cs" />
     <Compile Include="Base\DPacker\DSave.cs" />
+    <Compile Include="Base\DProf.cs" />
     <Compile Include="Base\DVersioner.cs" />
     <Compile Include="Base\DPacker\PackerAttrib.cs" />
     <Compile Include="Base\VirtualKeys.cs" />
