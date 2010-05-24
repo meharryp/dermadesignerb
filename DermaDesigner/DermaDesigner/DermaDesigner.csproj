@@ -129,6 +129,7 @@
     <Compile Include="Controls\DLabel.cs" />
     <Compile Include="Controls\DMultiChoice.cs" />
     <Compile Include="Controls\DNumberWang.cs" />
+    <Compile Include="Controls\DNumPad.cs" />
     <Compile Include="Controls\DNumSlider.cs" />
     <Compile Include="Controls\DPanel.cs" />
     <Compile Include="Controls\DTextEntry.cs" />

@@ -518,5 +518,32 @@ namespace DermaDesigner {
 			gfxPath.Dispose();
 		}
 		#endregion DrawRoundedRectangle
-	}
+
+        #region Clamp
+        public static int Clamp(int Val, int Min, int Max)
+        {
+            if (Val < Min)
+            {
+                return Min;
+            }
+            else if (Val > Max)
+            {
+                return Max;
+            }
+            return Val;
+        }
+        public static float Clamp(float Val, float Min, float Max)
+        {
+            if (Val < Min)
+            {
+                return Min;
+            }
+            else if (Val > Max)
+            {
+                return Max;
+            }
+            return Val;
+        }
+        #endregion Clamp
+    }
 }
