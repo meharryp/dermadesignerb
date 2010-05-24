@@ -57,15 +57,11 @@ namespace DermaDesigner {
 		public float InitialValue {
 			get { return val; }
 			set {
-				if (value < this.min || value > this.max)
-					MessageBox.Show("Property Value is not valid", "Properties Window");
-				else if (value >= this.min && value <= this.max)
-					this.val = (float)Math.Round(value, this.decimals);
-
+				this.val = (float)Math.Round(Derma.Clamp(value,min,max), this.decimals);
 				this.textSize = Derma.GetTextSize(this.val.ToString());
 				Derma.Repaint();
 
-			}
+			}   
 		}
 
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the number of decimal places the DNumSlider will use")]
