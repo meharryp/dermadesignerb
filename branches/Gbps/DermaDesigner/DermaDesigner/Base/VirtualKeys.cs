@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Runtime.InteropServices;
 namespace DermaDesigner {
 	public class VirtualKeys {
@@ -12,7 +9,6 @@ namespace DermaDesigner {
 			return Convert.ToBoolean(GetKeyState(key) & 0x8000);
 		}
 	}
-
 	public enum VirtualKeyStates : int {
 		VK_LBUTTON = 0x01,
 		VK_RBUTTON = 0x02,

@@ -62,6 +62,10 @@ namespace DermaDesigner {
 		[BrowsableAttribute(false)]
 		public virtual bool sizabley { get { return true; } }
 
+        /// <summary>
+        /// Used by DPacker to assign the varname of the parent that the packer should match later on.
+        /// </summary>
+        public string parentIdentifier;
 		public Image thumbnail;
 
 		// This is just for the properties box
@@ -297,6 +301,7 @@ namespace DermaDesigner {
 				ResizeGrip.host = null;
 			Derma.GetPanels().Remove(this);
 			Derma.Repaint();
+           
 		}
 
 		public virtual void ControlPaint(object sender, PaintEventArgs p) { }
