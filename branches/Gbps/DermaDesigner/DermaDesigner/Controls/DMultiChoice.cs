@@ -32,7 +32,7 @@ namespace DermaDesigner.Controls {
 		#region Properties
 		[Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor)), CategoryAttribute("Lua Attributes"), DescriptionAttribute("The items the DComboBox will show")]
 		public List<string> Items {
-			get { return items; }
+			get { return items; }   
 			set { items = value; Derma.Repaint(); }
 		}
 
@@ -64,14 +64,11 @@ namespace DermaDesigner.Controls {
 		public int InitialSelectionIndex {
 			get { return initialselectnum; }
 			set {
-				if (value > items.Count || value < 1)
-					System.Windows.Forms.MessageBox.Show("Invalid value for InitialSelectionIndex", "Invalid value");
-				else {
-					initialselectnum = value;
-					Derma.Repaint();
+				    initialselectnum = Derma.Clamp(value,1,items.Count);
+				    Derma.Repaint();
 				}
-			}
 		}
+		
 		#endregion Properties
 
 		public DMultiChoice(int xpos, int ypos) : base(xpos, ypos, 50, 21) {
