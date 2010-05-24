@@ -10,7 +10,7 @@ using System.IO;
 
 namespace DermaDesigner {
     public class Derma {
-        private static DProf Profiler;
+        public static DProf Profiler;
         private static Form workspace;							// the form in which new panels will appear
 		public static PropertiesWindow prop;					// the form that will display the selected control's properties
 		public static Toolbox toolbox;							// the global variable to store the toobox form in
@@ -259,7 +259,7 @@ namespace DermaDesigner {
         public static bool CanRepaint()
         {
             double millisecs = (DateTime.Now - lastPaint).TotalMilliseconds;
-            if (millisecs >= 1000/60)
+            if (millisecs >= 1000/120) // This levels out to about 60fps. Interval = 1000/(FPS*2)
             {
                 return true;
             }else
@@ -270,8 +270,6 @@ namespace DermaDesigner {
 
         public static void Repaint() {
 			if(Profiler == null){Profiler=new DProf("Derma.Repaint");}
-            // which one is better?
-			//workspace.Invalidate();
             if (CanRepaint())
             {
                 Profiler.Start();

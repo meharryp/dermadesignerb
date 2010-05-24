@@ -8,40 +8,41 @@ namespace DermaDesigner
     /// <summary>
     /// Profiler for functions, finds the number of uses and average time between each function call @Gbps
     /// </summary>
-    class DProf
+    public class DProf
     {
         private string FuncName = "";
-        private string Spew = "";
         private DateTime TimerS;
         private int Count;
-        private TimeSpan Total;
         private double LastAvg;
         public DProf(string FuncName)
         {
             this.FuncName = FuncName;
-            Total = new TimeSpan();
             TimerS = new DateTime();
+            TimerS = DateTime.Now;
         }
 
         public void Start()
         {
-            this.FuncName = FuncName;
-            TimerS = DateTime.Now;
         }
 
         public string End()
         {
             TimeSpan Diff = DateTime.Now - TimerS;
-            Total.Add(Diff);
-            double TMilliseconds = Total.TotalMilliseconds;
+            double TotalSeconds = Diff.TotalSeconds;
             Count += 1;
-            LastAvg = TMilliseconds/Count;
+            LastAvg = Math.Round(Count / TotalSeconds);
             return GetSpew();
         }
 
         public string GetSpew()
         {
-            return String.Format("[{0}] COUNT: {1} AVG: {2}ms", FuncName, Count, LastAvg);
+            return String.Format("[{0}] COUNT: {1} AVG: {2}/s", FuncName, Count, LastAvg);
+        }
+        
+        public void Reset()
+        {
+            TimerS = DateTime.Now;
+            Count = 0;
         }
     }
 }

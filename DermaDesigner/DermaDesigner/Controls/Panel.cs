@@ -21,7 +21,24 @@ namespace DermaDesigner {
 		public int dragOffsetY;
         [PackerAttrib()]
 		public float z;
-		public bool highlighted;
+
+        private bool _highlighted;
+        public bool highlighted
+        {
+            get
+            {
+                return _highlighted;
+            }
+            set
+            {
+                if (value != _highlighted)
+                {
+                    _highlighted = value;
+                    Derma.Repaint();
+                }
+            }
+        }
+
 		// this is for the designer to know whether to treat this control like it exists or not
         [PackerAttrib()]
 		public bool hidden;
@@ -62,6 +79,8 @@ namespace DermaDesigner {
 		[BrowsableAttribute(false)]
 		public virtual bool sizabley { get { return true; } }
 
+        private int LastX = 0;
+        private int LastY = 0;
         /// <summary>
         /// Used by DPacker to assign the varname of the parent that the packer should match later on.
         /// </summary>
@@ -207,7 +226,12 @@ namespace DermaDesigner {
 			}
 			this.x = x;
 			this.y = y;
-			Derma.Repaint();
+            if (LastX != x || LastY != y)
+            {
+                Derma.Repaint();
+            }
+		    LastX = x;
+		    LastY = y;
 		}
 
 		public Point GetPosRelativeToParent() {

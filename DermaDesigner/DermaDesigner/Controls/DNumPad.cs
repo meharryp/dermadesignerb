@@ -19,7 +19,7 @@ namespace DermaDesigner.Controls
             get { return this.value;  }
             set
             {
-                this.value = Derma.Clamp(value, 0, 15);
+                this.value = Derma.Clamp(value, -1, 15);
                 Derma.Repaint();
             }
         }

@@ -222,6 +222,11 @@ namespace DermaDesigner {
         {
             DSave.ClearAll();
             DSave.Load(OpenDialog.FileName);
+        }
+
+        private void _DebugResetLabelMain_Click(object sender, EventArgs e)
+        {
+            Derma.Profiler.Reset();
         }		
     }
 }
