@@ -95,6 +95,7 @@ namespace DermaDesigner {
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the depth at which to draw this control")]
+        [PackerAttrib(true)]
 		public float Z {
 			get { return z; }
 			set { z = value; Derma.ResortPanelsByZ(); Derma.Repaint(); }

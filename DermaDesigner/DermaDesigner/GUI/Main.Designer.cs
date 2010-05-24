@@ -66,6 +66,8 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.FormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,19 +313,19 @@
             // findPanelByVariableToolStripMenuItem
             // 
             this.findPanelByVariableToolStripMenuItem.Name = "findPanelByVariableToolStripMenuItem";
-            this.findPanelByVariableToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.findPanelByVariableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.findPanelByVariableToolStripMenuItem.Text = "Find Panel";
             this.findPanelByVariableToolStripMenuItem.Click += new System.EventHandler(this.findPanelByVariableToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
@@ -332,24 +334,28 @@
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -360,6 +366,22 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            // 
+            // SaveDialog
+            // 
+            this.SaveDialog.CreatePrompt = true;
+            this.SaveDialog.DefaultExt = "ddproj";
+            this.SaveDialog.Filter = "Derma Designer Files|*.ddproj|All files|*.*";
+            this.SaveDialog.Title = "Choose a Derma Designer Project File";
+            this.SaveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveDialog_FileOk);
+            // 
+            // OpenDialog
+            // 
+            this.OpenDialog.DefaultExt = "ddproj";
+            this.OpenDialog.Filter = "Derma Designer Files|*.ddproj|All files|*.*";
+            this.OpenDialog.ReadOnlyChecked = true;
+            this.OpenDialog.Title = "Choose a Derma Designer Project File to Load";
+            this.OpenDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenDialog_FileOk);
             // 
             // Main
             // 
@@ -375,7 +397,8 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DermaDesigner - Workspace";
+            this.Text = "DermaDesigner";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
@@ -427,6 +450,8 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        public System.Windows.Forms.SaveFileDialog SaveDialog;
+        public System.Windows.Forms.OpenFileDialog OpenDialog;
     }
 }
 

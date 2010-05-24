@@ -177,6 +177,51 @@ namespace DermaDesigner {
 				System.Diagnostics.Process.Start("DermaDesignerUpdater.exe");
 				Environment.Exit(0);
 			}
-		}		
+		}
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSave.ClearAll();
+            Derma.Repaint();
+        }
+
+        private void SaveDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            DSave.SaveAs(SaveDialog.FileName);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DSave.GetEnvironment() == "Untitled.ddproj")
+            {
+                SaveDialog.ShowDialog();
+            }else
+            {
+                DSave.Save();
+            }
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSave.SetDialogDefaults();
+            SaveDialog.ShowDialog();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSave.SetDialogDefaults();
+            OpenDialog.ShowDialog();
+        }
+
+        private void OpenDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            DSave.ClearAll();
+            DSave.Load(OpenDialog.FileName);
+        }		
     }
 }
