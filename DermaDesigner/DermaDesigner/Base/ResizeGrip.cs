@@ -101,7 +101,7 @@ namespace DermaDesigner {
 		}
 
 		public static bool Resize_MouseDown(object sender, MouseEventArgs e) {
-			if (host != null && Derma.GetSelected() == host && !host.locked && host.sizable && host.sizablex && Derma.IsMouseOverArea(host.x + host.width - halfSize - 2, host.y + host.height / 2 - halfSize, 16, 16)) {
+            if (host != null && Derma.GetSelected() == host && !host.locked && host.sizable && host.sizablex && Derma.IsMouseOverArea(host.x + host.width - halfSize - 2, host.y + host.height / 2 - halfSize, 16, 16)) {
 				resizing = true;
 				resizingx = true;
 				mouseOrigin.X = e.X;

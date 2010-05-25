@@ -22,5 +22,10 @@ namespace DermaDesigner {
 			if (this.snapToWorkspace)
 				this.Location = new System.Drawing.Point(Derma.GetWorkspace().Location.X + Derma.GetWorkspace().ClientSize.Width + 24, Derma.GetWorkspace().Location.Y);
 		}
+
+        private void PropertiesWindow_Load(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

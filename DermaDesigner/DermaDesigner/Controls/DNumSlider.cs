@@ -39,7 +39,8 @@ namespace DermaDesigner {
 		private SizeF textSize = Derma.GetTextSize("0");
 
 		// Lua variables
-		public float val = 0;
+        [PackerAttrib()]
+        public float val = 0;
 		public float min = 0;
 		public float max = 1;
 		public int decimals = 0;
@@ -51,19 +52,16 @@ namespace DermaDesigner {
 		public string OnValueChangedFunc = "function() end";
 
 		#region Properties
-		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the initial value of the DNumSlider")]
+        [PackerAttrib(true)]
+        [CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the initial value of the DNumSlider")]
 		public float InitialValue {
 			get { return val; }
 			set {
-				if (value < this.min || value > this.max)
-					MessageBox.Show("Property Value is not valid", "Properties Window");
-				else if (value >= this.min && value <= this.max)
-					this.val = (float)Math.Round(value, this.decimals);
-
+				this.val = (float)Math.Round(Derma.Clamp(value,min,max), this.decimals);
 				this.textSize = Derma.GetTextSize(this.val.ToString());
 				Derma.Repaint();
 
-			}
+			}   
 		}
 
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the number of decimal places the DNumSlider will use")]
