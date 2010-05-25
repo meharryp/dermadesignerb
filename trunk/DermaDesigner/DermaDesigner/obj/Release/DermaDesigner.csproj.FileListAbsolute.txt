@@ -83,3 +83,25 @@ C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDes
 C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.application
 C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe
 C:\Program Files (x86)\Steam\steamapps\cowmonkey111\garrysmod\garrysmod\DermaDesigner\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.exe.config
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.exe.manifest
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.application
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.exe
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesigner.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\ResolveAssemblyReference.cache
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.FindPanelByVar.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Main.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.LargeTextBox.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.PropertiesWindow.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Properties.Resources.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.SaveLuaFile.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.Toolbox.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\GenerateResource-ResGen.read.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\ResGen.read.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\GenerateResource-ResGen.write.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\ResGen.write.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.TrustInfo.xml
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.exe.manifest
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\obj\Release\DermaDesigner.application

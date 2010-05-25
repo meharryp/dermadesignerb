@@ -306,6 +306,9 @@ namespace DermaDesigner {
 			// Paint the large logo
 			e.Graphics.DrawImage(logo_256, new Rectangle(workspace.Width - logo_256.Width - 24, 16 + 24, logo_256.Width, logo_256.Height), 0, 0, logo_256.Width, logo_256.Height, GraphicsUnit.Pixel, imAttr);
 
+			// Draw the grid
+			GUI.Grid.Paint(sender, e);
+
 			// Do the panels in reverse order to draw the one with the highest z index first
 			// because we add new panels as index 0 of the panels list, because they should get the mouse click events first
 			for (int i = panels.Count - 1; i >= 0; i--) {
@@ -460,7 +463,7 @@ namespace DermaDesigner {
 				if (!ResizeGrip.IsResizing() && p.dragging && !p.centered) {
 					// if predrag returns true, move the panel
 					if (p.PreDrag(e.X - p.dragOffsetX, e.Y - p.dragOffsetY)) {
-						p.SetPos(e.X - p.dragOffsetX, e.Y - p.dragOffsetY);
+						p.SetPos(e.X - p.dragOffsetX, e.Y - p.dragOffsetY, !VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_TAB));
 						p.PostDrag();
 						RefreshProperties();
 						
@@ -482,10 +485,7 @@ namespace DermaDesigner {
 							}
 						}
 					}
-
 				}
-
-				
 			}
 		}
 		#endregion MouseHandlers
