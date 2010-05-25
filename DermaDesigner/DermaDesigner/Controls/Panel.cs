@@ -218,20 +218,26 @@ namespace DermaDesigner {
 
         public Panel GetParent() { return parent; }
 
-		public void SetPos(int x, int y) {
-			foreach (Panel p in children) {
-				/*p.x += x - this.x;
-				p.y += y - this.y;*/
-				p.ModifyPos(x - this.x, y - this.y);
+		public void SetPos(int newx, int newy) {
+			SetPos(newx, newy, false);
+		}
+
+		public void SetPos(int newx, int newy, bool snap) {
+			if (GUI.Grid.DrawGrid && snap) {
+				newx = (int)Math.Round((double)newx / GUI.Grid.GridSize, 1) * GUI.Grid.GridSize;
+				newy = (int)Math.Round((double)newy / GUI.Grid.GridSize, 1) * GUI.Grid.GridSize;
 			}
-			this.x = x;
-			this.y = y;
-            if (LastX != x || LastY != y)
-            {
+
+			foreach (Panel p in children) {
+				p.ModifyPos(newx - this.x, newy - this.y);
+			}
+			this.x = newx;
+			this.y = newy;
+            if (LastX != newx || LastY != newy) {
                 Derma.Repaint();
             }
-		    LastX = x;
-		    LastY = y;
+		    LastX = newx;
+		    LastY = newy;
 		}
 
 		public Point GetPosRelativeToParent() {
@@ -277,13 +283,31 @@ namespace DermaDesigner {
 		}
 
 		public void SetSize(int w, int h) {
+			SetSize(w, h, false);
+		}
+
+		public void SetSize(int w, int h, bool snap) {
+			if (GUI.Grid.DrawGrid && snap) {
+				int totalw = this.x + w;
+				int totalh = this.y + h;
+
+				int neww = (int)Math.Round((double)totalw / GUI.Grid.GridSize) * GUI.Grid.GridSize;
+				int newh = (int)Math.Round((double)totalh / GUI.Grid.GridSize) * GUI.Grid.GridSize;
+
+				w = neww - this.x;
+				h = newh - this.y;
+			}
+
 			this.width = w;
 			this.height = h;
 		}
 
 		public void ModifySize(int w, int h) {
-			this.width += w;
-			this.height += h;
+			SetSize(this.width + w, this.height + h, false);
+		}
+
+		public void ModifySize(int w, int h, bool snap) {
+			SetSize(this.width + w, this.height + h, snap);
 		}
 
 		public void Center() {

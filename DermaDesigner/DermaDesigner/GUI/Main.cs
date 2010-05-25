@@ -186,8 +186,12 @@ namespace DermaDesigner {
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DSave.ClearAll();
-            Derma.Repaint();
+			DialogResult reply = MessageBox.Show("Are you sure you want to start a new project?\nAny unsaved data will be lost.",
+			"Really create a new project?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+			if (reply == DialogResult.Yes) {
+				DSave.ClearAll();
+				Derma.Repaint();
+			}
         }
 
         private void SaveDialog_FileOk(object sender, CancelEventArgs e)
@@ -214,6 +218,11 @@ namespace DermaDesigner {
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+			DialogResult reply = MessageBox.Show("Are you sure you want to open a saved project?\nAny unsaved data in the current project will be lost.",
+			"Open project", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+			if (reply != DialogResult.Yes) {
+				return;
+			}
             DSave.SetDialogDefaults();
             OpenDialog.ShowDialog();
         }
@@ -227,6 +236,57 @@ namespace DermaDesigner {
         private void _DebugResetLabelMain_Click(object sender, EventArgs e)
         {
             Derma.Profiler.Reset();
-        }		
+        }
+
+		private void noneToolStripMenuItem_Click(object sender, EventArgs e) {
+			GUI.Grid.DrawGrid = false;
+			Derma.Repaint();
+		}	
+
+		private void x5ToolStripMenuItem_Click(object sender, EventArgs e) {
+			GUI.Grid.DrawGrid = true;
+			GUI.Grid.GridSize = 5;
+			Derma.Repaint();
+		}
+
+		private void x10ToolStripMenuItem_Click(object sender, EventArgs e) {
+			GUI.Grid.DrawGrid = true;
+			GUI.Grid.GridSize = 10;
+			Derma.Repaint();
+		}
+
+		private void x20ToolStripMenuItem_Click(object sender, EventArgs e) {
+			GUI.Grid.DrawGrid = true;
+			GUI.Grid.GridSize = 25;
+			Derma.Repaint();
+		}
+
+		private void x50ToolStripMenuItem_Click(object sender, EventArgs e) {
+			GUI.Grid.DrawGrid = true;
+			GUI.Grid.GridSize = 50;
+			Derma.Repaint();
+		}
+
+		private void x100ToolStripMenuItem_Click(object sender, EventArgs e) {
+			GUI.Grid.DrawGrid = true;
+			GUI.Grid.GridSize = 100;
+			Derma.Repaint();
+		}
+
+		private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e) {
+			if (e.KeyChar == (char)VirtualKeyStates.VK_RETURN) {
+				int newv;
+				bool success = Int32.TryParse(toolStripTextBox1.Text, out newv);
+				if (success) {
+					toolsToolStripMenuItem.HideDropDown();
+					GUI.Grid.DrawGrid = true;
+					GUI.Grid.GridSize = newv;
+					e.Handled = true;
+					Derma.Repaint();
+				} else {
+					MessageBox.Show("Invalid grid size", "Invalid value");
+				}
+			}
+		}
     }
 }
