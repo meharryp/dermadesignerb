@@ -26,6 +26,7 @@ namespace DermaDesigner {
 		private SizeF textSize = Derma.GetTextSize("0");
 
 		// Lua variables
+        [PackerAttrib()]
 		public int val = 0;
 		public int min = 0;
 		public int max = 0;
@@ -37,15 +38,12 @@ namespace DermaDesigner {
 		public string OnValueChangedFunc = "function() end";
 
 		#region Properties
+        [PackerAttrib(true)]
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the initial value of the DNumberWang")]
 		public int InitialValue {
 			get { return val; }
 			set {
-				if (value < this.min || value > this.max)
-					MessageBox.Show("Property Value is not valid", "Properties Window");
-				else
-					this.val = value;
-
+                this.val = Derma.Clamp(value,this.min,this.max);
 				this.textSize = Derma.GetTextSize(this.val.ToString());
 				Derma.Repaint();
 			}

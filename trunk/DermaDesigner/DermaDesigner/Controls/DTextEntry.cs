@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
@@ -37,7 +39,7 @@ namespace DermaDesigner {
 			}
 		}
 
-		[Editor(typeof(System.ComponentModel.Design.MultilineStringEditor), typeof(System.Drawing.Design.UITypeEditor)), CategoryAttribute("Lua Attributes"), DescriptionAttribute("The function to be run when the enter button is pressed")]
+        [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), CategoryAttribute("Lua Attributes"), DescriptionAttribute("The function to be run when the enter button is pressed")]
 		public string OnEnter {
 			get { return onEnterFunc; }
 			set { onEnterFunc = value; }

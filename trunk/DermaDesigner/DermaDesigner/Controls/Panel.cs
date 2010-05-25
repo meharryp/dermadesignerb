@@ -9,15 +9,38 @@ using System.ComponentModel;
 
 namespace DermaDesigner {
     public abstract class Panel {
-		public int x;
+        [PackerAttrib()]
+        public int x;
+        [PackerAttrib()]
 		public int y;
+        [PackerAttrib()]
 		public int height;
+        [PackerAttrib()]
 		public int width;
 		public int dragOffsetX;
 		public int dragOffsetY;
+        [PackerAttrib()]
 		public float z;
-		public bool highlighted;
+
+        private bool _highlighted;
+        public bool highlighted
+        {
+            get
+            {
+                return _highlighted;
+            }
+            set
+            {
+                if (value != _highlighted)
+                {
+                    _highlighted = value;
+                    Derma.Repaint();
+                }
+            }
+        }
+
 		// this is for the designer to know whether to treat this control like it exists or not
+        [PackerAttrib()]
 		public bool hidden;
 		public List<Panel> children;
 		public MouseEventHandler MouseClickHandler;
@@ -36,13 +59,16 @@ namespace DermaDesigner {
 		public bool hasChildren;
 		public bool dragging;
 		public bool locked;
+        [PackerAttrib()]
 		public bool centered;
 		// this is to let is know whether to do SetVisible(false) on this control for lua
+        [PackerAttrib()]
 		public bool visible;
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("The controls type")]
 		public virtual string Type { get { return type; } }
 		[BrowsableAttribute(false)]
 		public virtual string type { get { return "Panel"; } }
+        [PackerAttrib()]
 		public string varname;
 		// This makes it able to size or not in the editor, for instance in DLabel we don't need to resize
 		// this doesn't correlate to lua's SetSizable
@@ -53,6 +79,12 @@ namespace DermaDesigner {
 		[BrowsableAttribute(false)]
 		public virtual bool sizabley { get { return true; } }
 
+        private int LastX = 0;
+        private int LastY = 0;
+        /// <summary>
+        /// Used by DPacker to assign the varname of the parent that the packer should match later on.
+        /// </summary>
+        public string parentIdentifier;
 		public Image thumbnail;
 
 		// This is just for the properties box
@@ -72,16 +104,29 @@ namespace DermaDesigner {
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the height of this control")]
 		public int Height {
 			get { return height; }
-			set { height = value; Derma.Repaint(); }
+            set { 
+                    if (sizable && sizabley)
+                    {
+                      height = value; Derma.Repaint();
+                    }
+                }
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the width of this control")]
 		public int Width {
 			get { return width; }
-			set { width = value; Derma.Repaint(); }
+			set
+			{
+                if (sizable && sizablex)
+                {
+                    width = value;
+                    Derma.Repaint();
+                }
+			}
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the depth at which to draw this control")]
+        [PackerAttrib(true)]
 		public float Z {
 			get { return z; }
 			set { z = value; Derma.ResortPanelsByZ(); Derma.Repaint(); }
@@ -181,7 +226,12 @@ namespace DermaDesigner {
 			}
 			this.x = x;
 			this.y = y;
-			Derma.Repaint();
+            if (LastX != x || LastY != y)
+            {
+                Derma.Repaint();
+            }
+		    LastX = x;
+		    LastY = y;
 		}
 
 		public Point GetPosRelativeToParent() {
@@ -288,6 +338,7 @@ namespace DermaDesigner {
 				ResizeGrip.host = null;
 			Derma.GetPanels().Remove(this);
 			Derma.Repaint();
+           
 		}
 
 		public virtual void ControlPaint(object sender, PaintEventArgs p) { }

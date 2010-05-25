@@ -10,6 +10,7 @@ using System.IO;
 
 namespace DermaDesigner {
     public class Derma {
+        public static DProf Profiler;
         private static Form workspace;							// the form in which new panels will appear
 		public static PropertiesWindow prop;					// the form that will display the selected control's properties
 		public static Toolbox toolbox;							// the global variable to store the toobox form in
@@ -48,9 +49,10 @@ namespace DermaDesigner {
 		public static FontFamily DefaultFontFamily;
 		public static Font DefaultFont;
 		public static SolidBrush fontBrush = new SolidBrush(Color.LightGray);
-
+        public static DateTime lastPaint = DateTime.Now;
 		// TODO: Make all mouse handlers check if the control is hidden via p.hidden
 
+        public static bool NeedsRefresh = false;
 		#region Init
 		public static void Init(Form mainform, PropertiesWindow prp, Toolbox tb) {
             workspace = mainform;
@@ -62,6 +64,7 @@ namespace DermaDesigner {
 
 			Tick.Interval = 20;
 			Tick.Tick += TickEvent;
+            Tick.Tick += new EventHandler(RepaintTick);
 			Tick.Start();
 
 			// for big logo
@@ -93,6 +96,7 @@ namespace DermaDesigner {
 			fontCollection.AddFontFile("resources/defaultFont.ttf");
 			DefaultFontFamily = fontCollection.Families[0];
 			DefaultFont = new Font(DefaultFontFamily, 6);
+            DSave.SetEnvironment("Untitled.ddproj");
 		}
 		#endregion Init
 
@@ -251,11 +255,42 @@ namespace DermaDesigner {
 		#endregion GetHighlightedPanel
 
 		#region Repaint
-		public static void Repaint() {
-			// which one is better?
-			//workspace.Invalidate();
-			workspace.Refresh();
+
+        public static bool CanRepaint()
+        {
+            double millisecs = (DateTime.Now - lastPaint).TotalMilliseconds;
+            if (millisecs >= 1000/120) // This levels out to about 60fps. Interval = 1000/(FPS*2)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
+        public static void Repaint() {
+			if(Profiler == null){Profiler=new DProf("Derma.Repaint");}
+            if (CanRepaint())
+            {
+                Profiler.Start();
+                workspace.Refresh();
+                Profiler.End();
+                ((Main)workspace)._DebugLabelMain.Text = Profiler.GetSpew();
+                lastPaint = DateTime.Now;
+                NeedsRefresh = false;
+            }else
+            {
+                NeedsRefresh = true;
+            }
+            
 		}
+        public static void RepaintTick(object s, EventArgs e)
+        {
+            if (CanRepaint() && NeedsRefresh)
+            {
+                Repaint();
+            }
+        }
 		#endregion Repaint
 
 		#region ResortPanelsByZ
@@ -447,9 +482,10 @@ namespace DermaDesigner {
 							}
 						}
 					}
+
 				}
 
-				Repaint();
+				
 			}
 		}
 		#endregion MouseHandlers
@@ -517,5 +553,32 @@ namespace DermaDesigner {
 			gfxPath.Dispose();
 		}
 		#endregion DrawRoundedRectangle
-	}
+
+        #region Clamp
+        public static int Clamp(int Val, int Min, int Max)
+        {
+            if (Val < Min)
+            {
+                return Min;
+            }
+            else if (Val > Max)
+            {
+                return Max;
+            }
+            return Val;
+        }
+        public static float Clamp(float Val, float Min, float Max)
+        {
+            if (Val < Min)
+            {
+                return Min;
+            }
+            else if (Val > Max)
+            {
+                return Max;
+            }
+            return Val;
+        }
+        #endregion Clamp
+    }
 }
