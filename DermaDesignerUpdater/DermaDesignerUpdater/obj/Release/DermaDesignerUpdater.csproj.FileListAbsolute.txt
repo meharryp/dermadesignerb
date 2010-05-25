@@ -26,3 +26,12 @@ Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdate
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Properties.Resources.resources
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.read.1.tlog
 Z:\Users\Zachary\Desktop\dermadesignerb\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.write.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.exe
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesigner\DermaDesigner\bin\Release\DermaDesignerUpdater.pdb
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\ResolveAssemblyReference.cache
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Main.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.Properties.Resources.resources
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.read.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\GenerateResource-ResGen.write.1.tlog
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.exe
+Z:\Users\Zachary\Desktop\DermaDesigner\trunk\DermaDesignerUpdater\DermaDesignerUpdater\obj\Release\DermaDesignerUpdater.pdb
