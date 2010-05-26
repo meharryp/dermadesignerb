@@ -37,7 +37,7 @@ namespace DermaDesigner {
 			string[] args = Environment.GetCommandLineArgs();
 			bool openFileOnStartup = false;
 
-			if (File.Exists(args[1]) && Path.GetExtension(args[1]) == ".ddproj")
+			if (args.Length > 1 && File.Exists(args[1]) && Path.GetExtension(args[1]) == ".ddproj")
 				openFileOnStartup = true;
 
 			// Set this before making any derma controls
