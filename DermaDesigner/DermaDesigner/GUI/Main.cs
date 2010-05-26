@@ -8,10 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace DermaDesigner {
-    public partial class Main : Form {
-        public Main() {
-            InitializeComponent();
-        }
+	public partial class Main : Form {
+		public Main() {
+			InitializeComponent();
+		}
 
 		private void x480ToolStripMenuItem_Click(object sender, EventArgs e) {
 			Main.ActiveForm.Size = new Size(640, 480);
@@ -94,15 +94,35 @@ namespace DermaDesigner {
 
 			switch (e.KeyValue) {
 				case (int)Keys.Up:
+					if (GUI.Grid.DrawGrid && !VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_TAB)) {
+						dist = Derma.GetSelected().y % GUI.Grid.GridSize;
+						if (dist == 0) dist = GUI.Grid.GridSize;
+						if (VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_SHIFT)) dist += GUI.Grid.GridSize;
+					}
 					Derma.GetSelected().ModifyPos(0, -dist);
 					break;
 				case (int)Keys.Left:
+					if (GUI.Grid.DrawGrid && !VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_TAB)) {
+						dist = Derma.GetSelected().x % GUI.Grid.GridSize;
+						if (dist == 0) dist = GUI.Grid.GridSize;
+						if (VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_SHIFT)) dist += GUI.Grid.GridSize;
+					}
 					Derma.GetSelected().ModifyPos(-dist, 0);
 					break;
 				case (int)Keys.Right:
+					if (GUI.Grid.DrawGrid && !VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_TAB)) {
+						dist = Derma.GetSelected().x % GUI.Grid.GridSize;
+						if (dist == 0) dist = GUI.Grid.GridSize;
+						if (VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_SHIFT)) dist += GUI.Grid.GridSize;
+					}
 					Derma.GetSelected().ModifyPos(dist, 0);
 					break;
 				case (int)Keys.Down:
+					if (GUI.Grid.DrawGrid && !VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_TAB)) {
+						dist = Derma.GetSelected().y % GUI.Grid.GridSize;
+						if (dist == 0) dist = GUI.Grid.GridSize;
+						if (VirtualKeys.IsKeyPressed(VirtualKeyStates.VK_SHIFT)) dist += GUI.Grid.GridSize;
+					}
 					Derma.GetSelected().ModifyPos(0, dist);
 					break;
 			}
@@ -179,69 +199,69 @@ namespace DermaDesigner {
 			}
 		}
 
-        private void Main_Load(object sender, EventArgs e)
-        {
+		private void Main_Load(object sender, EventArgs e) {
 
-        }
+		}
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			DialogResult reply = MessageBox.Show("Are you sure you want to start a new project?\nAny unsaved data will be lost.",
-			"Really create a new project?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-			if (reply == DialogResult.Yes) {
+		private void newToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (Derma.GetPanels().Count > 0) {
+				DialogResult reply = MessageBox.Show("Are you sure you want to start a new project?\nAny unsaved data will be lost.",
+				"Really create a new project?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+				if (reply == DialogResult.Yes) {
+					DSave.ClearAll();
+					Derma.prop.propertyGrid.SelectedObject = null;
+					Derma.Repaint();
+				}
+			} else {
 				DSave.ClearAll();
+				Derma.prop.propertyGrid.SelectedObject = null;
 				Derma.Repaint();
 			}
-        }
+		}
 
-        private void SaveDialog_FileOk(object sender, CancelEventArgs e)
-        {
-            DSave.SaveAs(SaveDialog.FileName);
-        }
+		private void SaveDialog_FileOk(object sender, CancelEventArgs e) {
+			DSave.SaveAs(SaveDialog.FileName);
+		}
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (DSave.GetEnvironment() == "Untitled.ddproj")
-            {
-                SaveDialog.ShowDialog();
-            }else
-            {
-                DSave.Save();
-            }
-        }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DSave.SetDialogDefaults();
-            SaveDialog.ShowDialog();
-        }
-
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			DialogResult reply = MessageBox.Show("Are you sure you want to open a saved project?\nAny unsaved data in the current project will be lost.",
-			"Open project", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-			if (reply != DialogResult.Yes) {
-				return;
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (DSave.GetEnvironment() == "Untitled.ddproj") {
+				SaveDialog.ShowDialog();
+			} else {
+				DSave.Save();
 			}
-            DSave.SetDialogDefaults();
-            OpenDialog.ShowDialog();
-        }
+		}
 
-        private void OpenDialog_FileOk(object sender, CancelEventArgs e)
-        {
-            DSave.ClearAll();
-            DSave.Load(OpenDialog.FileName);
-        }
+		private void saveAsToolStripMenuItem_Click(object sender, EventArgs e) {
+			DSave.SetDialogDefaults();
+			SaveDialog.ShowDialog();
+		}
 
-        private void _DebugResetLabelMain_Click(object sender, EventArgs e)
-        {
-            Derma.Profiler.Reset();
-        }
+		private void openToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (Derma.GetPanels().Count > 0) {
+				DialogResult reply = MessageBox.Show("Are you sure you want to open a saved project?\nAny unsaved data in the current project will be lost.",
+				"Open project", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+				if (reply != DialogResult.Yes) {
+					return;
+				}
+			}
+			DSave.SetDialogDefaults();
+			Derma.prop.propertyGrid.SelectedObject = null;
+			OpenDialog.ShowDialog();
+		}
+
+		private void OpenDialog_FileOk(object sender, CancelEventArgs e) {
+			DSave.ClearAll();
+			DSave.Load(OpenDialog.FileName);
+		}
+
+		private void _DebugResetLabelMain_Click(object sender, EventArgs e) {
+			Derma.Profiler.Reset();
+		}
 
 		private void noneToolStripMenuItem_Click(object sender, EventArgs e) {
 			GUI.Grid.DrawGrid = false;
 			Derma.Repaint();
-		}	
+		}
 
 		private void x5ToolStripMenuItem_Click(object sender, EventArgs e) {
 			GUI.Grid.DrawGrid = true;
@@ -288,5 +308,11 @@ namespace DermaDesigner {
 				}
 			}
 		}
-    }
+
+		private void unparentPanelToolStripMenuItem_Click(object sender, EventArgs e) {
+			Derma.GetSelected().UnParent();
+
+			Derma.Repaint();
+		}
+	}
 }

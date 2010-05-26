@@ -142,7 +142,7 @@ namespace DermaDesigner {
 			if (this.ShouldCenter())
 				code.AppendFormat("{0}:Center()\n", this.varname);
 			else
-				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParentNonRecursive().X, this.GetPosRelativeToParentNonRecursive().Y);
+				code.AppendFormat("{0}:SetPos({1})\n", this.varname, this.GetPosCode());
 
 			code.AppendFormat("{0}:SetDecimals({1})\n", this.varname, this.decimals);
 			code.AppendFormat("{0}:SetFloatValue({1})\n", this.varname, this.floatvalue);

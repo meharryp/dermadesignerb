@@ -53,6 +53,7 @@ namespace DermaDesigner {
 		// TODO: Make all mouse handlers check if the control is hidden via p.hidden
 
         public static bool NeedsRefresh = false;
+
 		#region Init
 		public static void Init(Form mainform, PropertiesWindow prp, Toolbox tb) {
             workspace = mainform;
@@ -131,6 +132,25 @@ namespace DermaDesigner {
 			return p;
 		}
 		#endregion New
+
+		#region ToScreenPercent
+		public static float ToScreenPercent(bool x, float num) {
+			if (x)
+				return (float)Math.Round(((num / workspace.ClientSize.Width) * 100), 1);
+			else {
+				return (float)Math.Round(((num / workspace.ClientSize.Height) * 100), 1);
+			}
+		}
+		#endregion ToScreenPercent
+
+		#region FromScreenPercent
+		public static float FromScreenPercent(bool x, float num) {
+			if (x)
+				return ((num / 100) * workspace.ClientSize.Width);
+			else
+				return ((num / 100) * workspace.ClientSize.Height);
+		}
+		#endregion FromScreenPercent
 
 		#region RegisterPanel
 		public static void RegisterPanel(string name, Type t, Image thumbnail) {

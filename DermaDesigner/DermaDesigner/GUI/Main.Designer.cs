@@ -81,6 +81,7 @@ namespace DermaDesigner
 			this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
 			this._DebugLabelMain = new System.Windows.Forms.Label();
 			this._DebugResetLabelMain = new System.Windows.Forms.Label();
+			this.unparentPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.FormMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -356,6 +357,7 @@ namespace DermaDesigner
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gridToolStripMenuItem,
             this.findPanelByVariableToolStripMenuItem,
+            this.unparentPanelToolStripMenuItem,
             this.toolStripSeparator2,
             this.updateToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
@@ -373,48 +375,48 @@ namespace DermaDesigner
             this.x100ToolStripMenuItem,
             this.customToolStripMenuItem});
 			this.gridToolStripMenuItem.Name = "gridToolStripMenuItem";
-			this.gridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.gridToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.gridToolStripMenuItem.Text = "Grid";
 			// 
 			// noneToolStripMenuItem
 			// 
 			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-			this.noneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.noneToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.noneToolStripMenuItem.Text = "None";
 			this.noneToolStripMenuItem.Click += new System.EventHandler(this.noneToolStripMenuItem_Click);
 			// 
 			// x5ToolStripMenuItem
 			// 
 			this.x5ToolStripMenuItem.Name = "x5ToolStripMenuItem";
-			this.x5ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.x5ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.x5ToolStripMenuItem.Text = "5 x 5";
 			this.x5ToolStripMenuItem.Click += new System.EventHandler(this.x5ToolStripMenuItem_Click);
 			// 
 			// x10ToolStripMenuItem
 			// 
 			this.x10ToolStripMenuItem.Name = "x10ToolStripMenuItem";
-			this.x10ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.x10ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.x10ToolStripMenuItem.Text = "10 x 10";
 			this.x10ToolStripMenuItem.Click += new System.EventHandler(this.x10ToolStripMenuItem_Click);
 			// 
 			// x20ToolStripMenuItem
 			// 
 			this.x20ToolStripMenuItem.Name = "x20ToolStripMenuItem";
-			this.x20ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.x20ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.x20ToolStripMenuItem.Text = "25 x 25";
 			this.x20ToolStripMenuItem.Click += new System.EventHandler(this.x20ToolStripMenuItem_Click);
 			// 
 			// x50ToolStripMenuItem
 			// 
 			this.x50ToolStripMenuItem.Name = "x50ToolStripMenuItem";
-			this.x50ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.x50ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.x50ToolStripMenuItem.Text = "50 x 50";
 			this.x50ToolStripMenuItem.Click += new System.EventHandler(this.x50ToolStripMenuItem_Click);
 			// 
 			// x100ToolStripMenuItem
 			// 
 			this.x100ToolStripMenuItem.Name = "x100ToolStripMenuItem";
-			this.x100ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.x100ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.x100ToolStripMenuItem.Text = "100 x 100";
 			this.x100ToolStripMenuItem.Click += new System.EventHandler(this.x100ToolStripMenuItem_Click);
 			// 
@@ -423,7 +425,7 @@ namespace DermaDesigner
 			this.customToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
 			this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-			this.customToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.customToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
 			this.customToolStripMenuItem.Text = "Custom";
 			// 
 			// toolStripTextBox1
@@ -435,19 +437,19 @@ namespace DermaDesigner
 			// findPanelByVariableToolStripMenuItem
 			// 
 			this.findPanelByVariableToolStripMenuItem.Name = "findPanelByVariableToolStripMenuItem";
-			this.findPanelByVariableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.findPanelByVariableToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.findPanelByVariableToolStripMenuItem.Text = "Find Panel";
 			this.findPanelByVariableToolStripMenuItem.Click += new System.EventHandler(this.findPanelByVariableToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(152, 6);
 			// 
 			// updateToolStripMenuItem
 			// 
 			this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-			this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.updateToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.updateToolStripMenuItem.Text = "Update";
 			this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
 			// 
@@ -492,6 +494,13 @@ namespace DermaDesigner
 			this._DebugResetLabelMain.Text = "Reset";
 			this._DebugResetLabelMain.Visible = false;
 			this._DebugResetLabelMain.Click += new System.EventHandler(this._DebugResetLabelMain_Click);
+			// 
+			// unparentPanelToolStripMenuItem
+			// 
+			this.unparentPanelToolStripMenuItem.Name = "unparentPanelToolStripMenuItem";
+			this.unparentPanelToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+			this.unparentPanelToolStripMenuItem.Text = "Unparent Panel";
+			this.unparentPanelToolStripMenuItem.Click += new System.EventHandler(this.unparentPanelToolStripMenuItem_Click);
 			// 
 			// Main
 			// 
@@ -580,6 +589,7 @@ namespace DermaDesigner
 		private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
 		private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
 		private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem unparentPanelToolStripMenuItem;
     }
 }
 

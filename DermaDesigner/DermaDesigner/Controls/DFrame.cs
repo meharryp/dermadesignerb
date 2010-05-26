@@ -122,17 +122,17 @@ namespace DermaDesigner {
 		public override string GenerateLua() {
 			StringBuilder code = new StringBuilder("\n");
 			code.AppendFormat("local {0} = vgui.Create('DFrame')\n", this.varname);
-			code.AppendFormat("{0}:SetSize({1}, {2})\n", this.varname, this.width, this.height);
+			code.AppendFormat("{0}:SetSize({1})\n", this.varname, this.GetSizeCode());
 
 			if (this.ShouldCenter())
 				code.AppendFormat("{0}:Center()\n", this.varname);
 			else
-				code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParentNonRecursive().X, this.GetPosRelativeToParentNonRecursive().Y);
+				code.AppendFormat("{0}:SetPos({1})\n", this.varname, this.GetPosCode());
 
 			code.AppendFormat("{0}:SetTitle('{1}')\n", this.varname, this.title);
 
-			if (!this.luaSizable)
-				code.AppendFormat("{0}:SetSizable(false)\n", this.varname);
+			if (this.luaSizable)
+				code.AppendFormat("{0}:SetSizable(true)\n", this.varname);
 
 			if (!this.deleteOnClose)
 				code.AppendFormat("{0}:SetDeleteOnClose(false)\n", this.varname);
