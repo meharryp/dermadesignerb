@@ -141,8 +141,6 @@ namespace DermaDesigner.Controls
             if (this.parent != null)
                 code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
-            //code.AppendFormat("{0}:SetSize({1}, {2})\n", this.varname, 76, 92);
-
             if (this.ShouldCenter())
                 code.AppendFormat("{0}:Center()\n", this.varname);
             else
@@ -152,13 +150,8 @@ namespace DermaDesigner.Controls
             if (value != -1)
                 code.AppendFormat("{0}:SetValue({1})\n", this.varname, this.value);
 
-            if(this.OnButtonPress!="")
-                code.AppendFormat("{0}:OnButtonPress=function() {1} end",this.varname,this.OnButtonPress);
-            //if (!this.visible)
-                //code.AppendFormat("{0}:SetVisible(false)\n", this.varname);
-
-            //if (this.DoClickFunc.Trim() != "")
-                //code.AppendFormat("{0}.ButtonPressed = {1}\n", this.varname, this.DoClickFunc);
+			if (this.OnButtonPress != "")
+				code.AppendFormat("{0}:OnButtonPress = {1}", this.varname, this.OnButtonPress);
 
             return code.ToString();
         }

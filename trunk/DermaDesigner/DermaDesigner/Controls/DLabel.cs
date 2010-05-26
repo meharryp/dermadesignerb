@@ -97,13 +97,13 @@ namespace DermaDesigner {
 			if (this.parent != null)
 				code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
-			code.AppendFormat("{0}:SetPos({1}, {2})\n", this.varname, this.GetPosRelativeToParentNonRecursive().X, this.GetPosRelativeToParentNonRecursive().Y);
+			code.AppendFormat("{0}:SetPos({1})\n", this.varname, this.GetPosCode());
 			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
 
 			if (this.sizetocontents)
 				code.AppendFormat("{0}:SizeToContents()\n", this.varname);
 			else
-				code.AppendFormat("{0}:SetSize({1}, {2})\n", this.varname, this.width, this.height);
+				code.AppendFormat("{0}:SetSize({1})\n", this.varname, this.GetSizeCode());
 
 			if (!this.visible)
 				code.AppendFormat("{0}:SetVisible(false)\n", this.varname);

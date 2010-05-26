@@ -21,8 +21,10 @@ namespace DermaDesigner {
 		public int dragOffsetY;
         [PackerAttrib()]
 		public float z;
+		[PackerAttrib()]
+		public bool percentPositioning;
 
-        private bool _highlighted;
+		private bool _highlighted;
 		[BrowsableAttribute(false)]
 		public bool highlighted {
 			get {
@@ -87,39 +89,92 @@ namespace DermaDesigner {
 		// This is just for the properties box
 		#region Properties
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("X Position")]
-		public int X {
-			get { return GetPosRelativeToParentNonRecursive().X; }
-			set { SetPosRelativeToParent(value, true); Derma.Repaint(); }
+		public float X {
+			get {
+				if (this.percentPositioning)
+					return Derma.ToScreenPercent(true, GetPosRelativeToParentNonRecursive().X);
+				else
+					return GetPosRelativeToParentNonRecursive().X;
+			}
+			set {
+				if (this.percentPositioning) {
+					SetPosRelativeToParent((int)Derma.FromScreenPercent(true, value), true);
+					Derma.RefreshProperties();
+					Derma.Repaint();
+				} else {
+					SetPosRelativeToParent((int)value, true);
+					Derma.RefreshProperties();
+					Derma.Repaint();
+				}
+			}
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Y Position")]
-		public int Y {
-			get { return GetPosRelativeToParentNonRecursive().Y; }
-			set { SetPosRelativeToParent(value, false); Derma.Repaint(); }
+		public float Y {
+			get { 
+				if (this.percentPositioning)
+					return Derma.ToScreenPercent(false, GetPosRelativeToParentNonRecursive().Y);
+				else
+					return GetPosRelativeToParentNonRecursive().Y;
+			}
+			set {
+				if (this.percentPositioning) {
+					SetPosRelativeToParent((int)Derma.FromScreenPercent(false, value), false);
+					Derma.Repaint();
+				} else {
+					SetPosRelativeToParent((int)value, false);
+					Derma.Repaint();
+				}
+			}
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the height of this control")]
-		public int Height {
-			get { return height; }
-            set { 
-                    if (sizable && sizabley)
-                    {
-                      height = value; Derma.Repaint();
-                    }
-                }
+		public float Height {
+			get {
+				if (this.percentPositioning)
+					return Derma.ToScreenPercent(false, this.height);
+				else
+					return this.height;
+			}
+			set {
+				if (sizable && sizabley) {
+					if (this.percentPositioning) {
+						this.height = (int)Derma.FromScreenPercent(false, value);
+						Derma.Repaint();
+					} else {
+						this.height = (int)value;
+						Derma.Repaint();
+					}
+				}
+			}
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the width of this control")]
-		public int Width {
-			get { return width; }
-			set
-			{
-                if (sizable && sizablex)
-                {
-                    width = value;
-                    Derma.Repaint();
-                }
+		public float Width {
+			get {
+				if (this.percentPositioning)
+					return Derma.ToScreenPercent(true, this.width);
+				else
+					return this.width;
 			}
+			set {
+				if (sizable && sizablex) {
+					if (this.percentPositioning) {
+						this.width = (int)Derma.FromScreenPercent(true, value);
+						Derma.Repaint();
+					} else {
+						this.width = (int)value;
+						Derma.Repaint();
+					}
+				}
+			}
+		}
+
+		[CategoryAttribute("Position and Size"), DescriptionAttribute("When true, this control's position and size will be based on the size of the screen")]
+		[PackerAttrib(true)]
+		public bool PositionByPercent {
+			get { return percentPositioning; }
+			set { percentPositioning = value; Derma.RefreshProperties(); }
 		}
 
 		[CategoryAttribute("Position and Size"), DescriptionAttribute("Sets the depth at which to draw this control")]
@@ -178,6 +233,7 @@ namespace DermaDesigner {
 			this.y = ypos;
 			this.width = w;
 			this.height = h;
+			this.percentPositioning = false;
 
 			this.children = new List<Panel>();
 
@@ -307,6 +363,20 @@ namespace DermaDesigner {
 			SetSize(this.width + w, this.height + h, snap);
 		}
 
+		public string GetPosCode() {
+			if (this.percentPositioning)
+				return String.Format("ScrW() * {0}, ScrH() * {1}", this.X / 100, this.Y / 100);
+			else
+				return String.Format("{0}, {1}", this.x, this.y);
+		}
+
+		public string GetSizeCode() {
+			if (this.percentPositioning)
+				return String.Format("ScrW() * {0}, ScrH() * {1}", this.Width / 100, this.Height / 100);
+			else
+				return String.Format("{0}, {1}", this.width, this.height);
+		}
+
 		public void Center() {
 			if (this.hasParent && this.parent)
 				this.SetPos(parent.x + (parent.width / 2) - (this.width / 2), parent.y + (parent.height / 2) - (this.height / 2));
@@ -329,8 +399,8 @@ namespace DermaDesigner {
         }
 
         public void UnParent() {
-            if (this.hasParent) {
-                Panel p = this.GetParent();
+            if (this.hasParent && this.parent) {
+                Panel p = this.parent;
                 p.children.Remove(this);
 
                 if (p.children.Count < 1)
