@@ -34,6 +34,12 @@ namespace DermaDesigner {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+			string[] args = Environment.GetCommandLineArgs();
+			bool openFileOnStartup = false;
+
+			if (File.Exists(args[1]) && Path.GetExtension(args[1]) == ".ddproj")
+				openFileOnStartup = true;
+
 			// Set this before making any derma controls
 			Derma.Init(new Main(), new PropertiesWindow(), new Toolbox());
 			Derma.GetWorkspace().Show();
@@ -84,6 +90,9 @@ namespace DermaDesigner {
 			Derma.GetWorkspace().LostFocus += new EventHandler(Program_LostFocus);
 			ShowWindowInterop.ShowInactiveTopmost((Form)Derma.prop);
 			ShowWindowInterop.ShowInactiveTopmost((Form)Derma.toolbox);
+
+			if (openFileOnStartup)
+				DSave.Load(args[1]);
 
             Application.Run(Derma.GetWorkspace());
         }
