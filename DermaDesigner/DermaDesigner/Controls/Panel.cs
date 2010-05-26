@@ -23,21 +23,18 @@ namespace DermaDesigner {
 		public float z;
 
         private bool _highlighted;
-        public bool highlighted
-        {
-            get
-            {
-                return _highlighted;
-            }
-            set
-            {
-                if (value != _highlighted)
-                {
-                    _highlighted = value;
-                    Derma.Repaint();
-                }
-            }
-        }
+		[BrowsableAttribute(false)]
+		public bool highlighted {
+			get {
+				return _highlighted;
+			}
+			set {
+				if (value != _highlighted) {
+					_highlighted = value;
+					Derma.Repaint();
+				}
+			}
+		}
 
 		// this is for the designer to know whether to treat this control like it exists or not
         [PackerAttrib()]
