@@ -27,6 +27,7 @@ namespace DermaDesigner {
 		// Lua variables
 		public string text = "";
 		public string onEnterFunc = "function() end";
+		public bool multiline = false;
 
 		#region Properties
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the text initially displayed in the DTextEntry")]
@@ -37,6 +38,12 @@ namespace DermaDesigner {
 				this.textSize = Derma.GetTextSize(this.text);
 				Derma.Repaint();
 			}
+		}
+
+		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("If true, this DTextEntry will be MultiLine")]
+		public bool Multiline {
+			get { return multiline; }
+			set { this.multiline = value; }
 		}
 
         [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), CategoryAttribute("Lua Attributes"), DescriptionAttribute("The function to be run when the enter button is pressed")]
@@ -93,6 +100,9 @@ namespace DermaDesigner {
 				code.AppendFormat("{0}:Center()\n", this.varname);
 			else
 				code.AppendFormat("{0}:SetPos({1})\n", this.varname, this.GetPosCode());
+
+			if (this.multiline)
+				code.AppendFormat("{0}:SetMultiline(true)\n", this.varname);
 
 			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
 
