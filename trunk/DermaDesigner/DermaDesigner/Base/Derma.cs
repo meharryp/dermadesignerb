@@ -182,7 +182,11 @@ namespace DermaDesigner {
 		}
 
 		public static string GenerateLua() {
-			StringBuilder s = new StringBuilder();
+			StringBuilder s = new StringBuilder("\n");
+
+			foreach (Panel p in panels)
+				if (!p.global)
+					s.Append("local " + p.varname + "\n");
 
 			foreach (Panel p in panels)
 				if (!p.hasParent && !p.parent)

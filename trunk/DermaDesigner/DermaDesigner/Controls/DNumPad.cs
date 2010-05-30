@@ -136,7 +136,7 @@ namespace DermaDesigner.Controls
         }
         public override string GenerateLua() {
             StringBuilder code = new StringBuilder("\n");
-            code.AppendFormat("local {0} = vgui.Create('DNumPad')\n", this.varname);
+            code.AppendFormat("{0} = vgui.Create('DNumPad')\n", this.varname);
 
             if (this.parent != null)
                 code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);

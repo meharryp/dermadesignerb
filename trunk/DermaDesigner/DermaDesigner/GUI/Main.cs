@@ -314,5 +314,21 @@ namespace DermaDesigner {
 
 			Derma.Repaint();
 		}
+
+		private void Main_FormClosing(object sender, FormClosingEventArgs e) {
+			if (Derma.GetPanels().Count > 0) {
+				DialogResult reply = MessageBox.Show("Do you want to save your current project?",
+				"Save project", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+				if (reply == DialogResult.Yes) {
+					if (DSave.GetEnvironment() == "Untitled.ddproj") {
+						SaveDialog.ShowDialog();
+					} else {
+						DSave.Save();
+					}
+				} else if (reply == DialogResult.Cancel) {
+					e.Cancel = true;
+				}
+			}			
+		}
 	}
 }

@@ -58,6 +58,8 @@ namespace DermaDesigner {
 		public bool hasChildren;
 		public bool dragging;
 		public bool locked;
+		[PackerAttrib()]
+		public bool global;
         [PackerAttrib()]
 		public bool centered;
 		// this is to let is know whether to do SetVisible(false) on this control for lua
@@ -190,6 +192,12 @@ namespace DermaDesigner {
 			set { locked = value; }
 		}
 
+		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("If true, the variable for this panel will be global")]
+		public bool Global {
+			get { return global; }
+			set { global = value; }
+		}
+
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Toggles the initial visibility of this control")]
 		public bool Visible {
 			get { return visible; }
@@ -245,6 +253,7 @@ namespace DermaDesigner {
 			this.centered = false;
 			this.visible = true;
 			this.varname = "";
+			this.global = false;
 		}
 
 		~Panel() {
@@ -367,7 +376,7 @@ namespace DermaDesigner {
 			if (this.percentPositioning)
 				return String.Format("ScrW() * {0}, ScrH() * {1}", this.X / 100, this.Y / 100);
 			else
-				return String.Format("{0}, {1}", this.x, this.y);
+				return String.Format("{0}, {1}", this.X, this.Y);
 		}
 
 		public string GetSizeCode() {
@@ -412,7 +421,7 @@ namespace DermaDesigner {
         }
 
 		public bool SetVarName(string name) {
-			System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("[^\\w]");
+			System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("[^a-zA-Z0-9_\\.\\[\\]]");
 			if (reg.IsMatch(name)) return false;
 
 			foreach (Panel p in Derma.GetPanels())
