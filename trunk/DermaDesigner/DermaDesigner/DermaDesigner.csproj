@@ -135,6 +135,7 @@
     <Compile Include="Controls\DNumSlider.cs" />
     <Compile Include="Controls\DPanel.cs" />
     <Compile Include="Controls\DTextEntry.cs" />
+    <Compile Include="Controls\SpawnIcon.cs" />
     <Compile Include="GUI\FindPanelByVar.cs">
       <SubType>Form</SubType>
     </Compile>
