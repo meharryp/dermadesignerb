@@ -180,7 +180,7 @@ namespace DermaDesigner {
 
 		public override string GenerateLua() {
 			StringBuilder code = new StringBuilder("\n");
-			code.AppendFormat("local {0} = vgui.Create('DNumSlider')\n", this.varname);
+			code.AppendFormat("{0} = vgui.Create('DNumSlider')\n", this.varname);
 			code.AppendFormat("{0}:SetSize({1})\n", this.varname, this.GetSizeCode());
 
 			if (this.parent != null)

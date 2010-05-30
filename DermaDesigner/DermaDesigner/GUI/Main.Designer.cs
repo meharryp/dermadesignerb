@@ -75,13 +75,13 @@ namespace DermaDesigner
 			this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
 			this.findPanelByVariableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.unparentPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
 			this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
 			this._DebugLabelMain = new System.Windows.Forms.Label();
 			this._DebugResetLabelMain = new System.Windows.Forms.Label();
-			this.unparentPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.FormMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -441,6 +441,13 @@ namespace DermaDesigner
 			this.findPanelByVariableToolStripMenuItem.Text = "Find Panel";
 			this.findPanelByVariableToolStripMenuItem.Click += new System.EventHandler(this.findPanelByVariableToolStripMenuItem_Click);
 			// 
+			// unparentPanelToolStripMenuItem
+			// 
+			this.unparentPanelToolStripMenuItem.Name = "unparentPanelToolStripMenuItem";
+			this.unparentPanelToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+			this.unparentPanelToolStripMenuItem.Text = "Unparent Panel";
+			this.unparentPanelToolStripMenuItem.Click += new System.EventHandler(this.unparentPanelToolStripMenuItem_Click);
+			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -495,13 +502,6 @@ namespace DermaDesigner
 			this._DebugResetLabelMain.Visible = false;
 			this._DebugResetLabelMain.Click += new System.EventHandler(this._DebugResetLabelMain_Click);
 			// 
-			// unparentPanelToolStripMenuItem
-			// 
-			this.unparentPanelToolStripMenuItem.Name = "unparentPanelToolStripMenuItem";
-			this.unparentPanelToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-			this.unparentPanelToolStripMenuItem.Text = "Unparent Panel";
-			this.unparentPanelToolStripMenuItem.Click += new System.EventHandler(this.unparentPanelToolStripMenuItem_Click);
-			// 
 			// Main
 			// 
 			this.AllowDrop = true;
@@ -519,6 +519,7 @@ namespace DermaDesigner
 			this.Name = "Main";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "DermaDesigner";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
 			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
