@@ -98,7 +98,7 @@ namespace DermaDesigner {
 				code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
 			code.AppendFormat("{0}:SetPos({1})\n", this.varname, this.GetPosCode());
-			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
+			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text.Replace(Environment.NewLine, "\\n"));
 
 			if (this.sizetocontents)
 				code.AppendFormat("{0}:SizeToContents()\n", this.varname);
