@@ -203,7 +203,14 @@ namespace DermaDesigner {
 
 		#region LoadImage
 		public static Image LoadImage(string filename) {
+			return LoadImage(filename, false);
+		}
+
+		public static Image LoadImage(string filename, bool abspath) {
 			Image img;
+			if (!abspath)
+				filename = Application.StartupPath + "\\" + filename;
+
 			try {
 				img = Image.FromFile(filename);
 				return img;

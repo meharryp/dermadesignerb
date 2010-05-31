@@ -67,7 +67,7 @@ namespace DermaDesigner {
 			/* end panel registration */
 
 			/* here we will load all the extension modules and register the panels in them */
-			string[] files = Directory.GetFiles("plugins", "*.dll");
+			string[] files = Directory.GetFiles(Application.StartupPath + "\\" + "plugins", "*.dll");
 
 			foreach (string dll in files) {
 				Assembly fe = LoadPlugin(Path.GetFullPath(dll), dll);
