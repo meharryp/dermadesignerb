@@ -424,10 +424,15 @@ namespace DermaDesigner {
 			System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex("[^a-zA-Z0-9_\\.\\[\\]]");
 			if (reg.IsMatch(name)) return false;
 
+			if (name.IndexOfAny(new char[] { '.', '[', ']' }) != -1)
+				this.global = true;
+
 			foreach (Panel p in Derma.GetPanels())
 				if (p.varname == name) return false;
 
 			varname = name;
+			Derma.RefreshProperties();
+
 			return true;
 		}
 

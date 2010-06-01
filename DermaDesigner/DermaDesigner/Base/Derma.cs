@@ -48,6 +48,8 @@ namespace DermaDesigner {
 		public static System.Drawing.Text.PrivateFontCollection fontCollection = new System.Drawing.Text.PrivateFontCollection();
 		public static FontFamily DefaultFontFamily;
 		public static Font DefaultFont;
+		public static FontFamily MarlettFontFamily;
+		public static Font MarlettFont;
 		public static SolidBrush fontBrush = new SolidBrush(Color.LightGray);
         public static DateTime lastPaint = DateTime.Now;
 		// TODO: Make all mouse handlers check if the control is hidden via p.hidden
@@ -94,10 +96,16 @@ namespace DermaDesigner {
             workspace.MouseWheel += MouseWheel;
 
 			// Set up the "Default" font
-			fontCollection.AddFontFile("resources/defaultFont.ttf");
-			DefaultFontFamily = fontCollection.Families[0];
+			fontCollection.AddFontFile("Marlett.ttf");
+			fontCollection.AddFontFile(Application.StartupPath + "\\" + "resources/defaultFont.ttf");
+
+			DefaultFontFamily = fontCollection.Families[1];
 			DefaultFont = new Font(DefaultFontFamily, 6);
-            DSave.SetEnvironment("Untitled.ddproj");
+
+			MarlettFontFamily = fontCollection.Families[0];
+			MarlettFont = new Font(MarlettFontFamily, 10);
+
+			DSave.SetEnvironment("Untitled.ddproj");
 		}
 		#endregion Init
 
@@ -539,9 +547,11 @@ namespace DermaDesigner {
 
 		#region GetTextSize
 		public static SizeF GetTextSize(string text) {
-			SizeF size = workspace.CreateGraphics().MeasureString(text, DefaultFont);
+			return GetTextSize(text, DefaultFont);
+		}
 
-			return size;
+		public static SizeF GetTextSize(string text, Font font) {
+			return workspace.CreateGraphics().MeasureString(text, font);
 		}
 		#endregion GetTextSize
 
