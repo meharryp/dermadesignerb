@@ -32,8 +32,8 @@ namespace DermaDesigner {
 		private SizeF labelSize = Derma.GetTextSize("DButton");
 
 		// Lua variables
-		string text = "DButton";
-		string DoClickFunc = "function() end";
+		public string text = "DButton";
+		public string DoClickFunc = "function() end";
 
 		#region Properties
 		[CategoryAttribute("Lua Attributes"), DescriptionAttribute("Sets the text displayed on the DButton")]
@@ -118,7 +118,7 @@ namespace DermaDesigner {
 			StringBuilder code = new StringBuilder("\n");
 			code.AppendFormat("{0} = vgui.Create('DButton')\n", this.varname);
 
-			if (this.parent != null)
+			if (this.hasParent && this.parent != null)
 				code.AppendFormat("{0}:SetParent({1})\n", this.varname, parent.varname);
 
 			code.AppendFormat("{0}:SetSize({1})\n", this.varname, this.GetSizeCode());
