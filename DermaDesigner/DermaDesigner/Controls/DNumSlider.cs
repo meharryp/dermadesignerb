@@ -201,6 +201,8 @@ namespace DermaDesigner {
 			if (this.OnValueChangedFunc.Trim() != "")
 				code.AppendFormat("{0}.OnValueChanged = {1}\n", this.varname, this.OnValueChangedFunc);
 
+			code.AppendFormat("{0}:SetText('{1}')\n", this.varname, this.text);
+
 			code.AppendFormat("{0}:SetValue({1})\n", this.varname, this.val);
 
 			code.AppendFormat("{0}:SetMinMax( {1}, {2})\n", this.varname, this.min, this.max);
