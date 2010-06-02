@@ -131,14 +131,14 @@ namespace DermaDesigner.Controls {
 			if (this.onSelectFunc.Trim() != "")
 				code.AppendFormat("function {0}{1}\n", this.varname, this.onSelectFunc);
 
-			if (items.Count > 0)
+			if (items.Count > 0) {
 				code.Append("\n");
 
-			foreach (string item in items)
-				code.AppendFormat("{0}:AddOption('{1}')\n", this.varname, item);
+				foreach (string item in items)
+					code.AppendFormat("{0}:AddChoice('{1}')\n", this.varname, item);
 
-			if (items.Count > 0)
 				code.Append("\n");
+			}
 
 			if (this.initialselection && this.initialselectnum > 0 && this.initialselectnum < this.items.Count + 1)
 				code.AppendFormat("{0}:ChooseOptionID({1})\n", this.varname, this.initialselectnum);
