@@ -135,7 +135,7 @@ namespace DermaDesigner.Controls {
 				code.Append("\n");
 
 			if (!this.selectMultiple)
-				code.AppendFormat("{0}:SelectMultiple(false)\n", this.varname);
+				code.AppendFormat("{0}:SetMultiple(false)\n", this.varname);
 
 			return code.ToString();
 		}
